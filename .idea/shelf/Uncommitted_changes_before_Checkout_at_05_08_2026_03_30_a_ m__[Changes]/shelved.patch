@@ -1,0 +1,132 @@
+Index: app/src/main/java/com/example/prueba/MenuHamburguesaAdmin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.prueba;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.webkit.WebChromeClient;\r\nimport android.webkit.WebSettings;\r\nimport android.webkit.WebView;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.appcompat.app.ActionBarDrawerToggle;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport androidx.core.view.GravityCompat;\r\nimport androidx.drawerlayout.widget.DrawerLayout;\r\n\r\nimport com.google.android.material.navigation.NavigationView;\r\n\r\npublic class MenuHamburguesaAdmin extends AppCompatActivity {\r\n\r\n    DrawerLayout drawerLayout;\r\n    NavigationView navigationView;\r\n    Toolbar toolbar;\r\n    TextView contenido;\r\n    WebView webView;\r\n\r\n    @SuppressLint(\"SetJavaScriptEnabled\")\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_vista_admin);\r\n\r\n        drawerLayout = findViewById(R.id.drawerLayout);\r\n        navigationView = findViewById(R.id.navigationView);\r\n        toolbar = findViewById(R.id.toolbar);\r\n        contenido = findViewById(R.id.txtContenido);\r\n\r\n        // 1. Instanciamos la WebView con validación para evitar NullPointerException\r\n        webView = findViewById(R.id.webViewVideo);\r\n\r\n        if (webView != null) {\r\n            WebSettings webSettings = webView.getSettings();\r\n            webSettings.setJavaScriptEnabled(true);\r\n            webSettings.setDomStorageEnabled(true);\r\n\r\n            // Permite la reproducción multimedia fluida\r\n            webSettings.setMediaPlaybackRequiresUserGesture(false);\r\n\r\n            webView.setWebChromeClient(new WebChromeClient());\r\n\r\n            // Cadena HTML para el reproductor\r\n            String htmlVideo = \"<!DOCTYPE html><html><head>\" +\r\n                    \"<style>body{margin:0;padding:0;background-color:#000;}</style>\" +\r\n                    \"</head><body>\" +\r\n                    \"<iframe width=\\\"100%\\\" height=\\\"100%\\\" \" +\r\n                    \"src=\\\"https://www.youtube.com/embed/iM7gUJ75_8w?enablejsapi=1\\\" \" +\r\n                    \"title=\\\"YouTube video player\\\" frameborder=\\\"0\\\" \" +\r\n                    \"allow=\\\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\\\" \" +\r\n                    \"allowfullscreen></iframe>\" +\r\n                    \"</body></html>\";\r\n\r\n            webView.loadDataWithBaseURL(\"https://www.youtube.com\", htmlVideo, \"text/html\", \"utf-8\", null);\r\n        }\r\n\r\n        setSupportActionBar(toolbar);\r\n\r\n        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(\r\n                this, drawerLayout, toolbar, R.string.open, R.string.close);\r\n        drawerLayout.addDrawerListener(toggle);\r\n        toggle.syncState();\r\n\r\n        toolbar.setNavigationOnClickListener(v -> {\r\n            drawerLayout.openDrawer(GravityCompat.START);\r\n        });\r\n\r\n        navigationView.setNavigationItemSelectedListener(item -> {\r\n            int id = item.getItemId();\r\n\r\n            if (id == R.id.nav_usuario) {\r\n                contenido.setText(\"Usuario\");\r\n            } else if (id == R.id.nav_productos) {\r\n                Intent intent = new Intent(MenuHamburguesaAdmin.this, ProductosActivity.class);\r\n                startActivity(intent);\r\n            } else if (id == R.id.nav_inventario) {\r\n                Intent intent = new Intent(MenuHamburguesaAdmin.this, InventarioActivity.class);\r\n                startActivity(intent);\r\n            } else if (id == R.id.nav_categorias) {\r\n                contenido.setText(\"Categorías\");\r\n            } else if (id == R.id.nav_almacenes) {\r\n                contenido.setText(\"Almacenes\");\r\n            } else if (id == R.id.nav_reportes) {\r\n                contenido.setText(\"Reportes\");\r\n            } else if (id == R.id.nav_cerrar_sesion) {\r\n                ManejarSesion.cerrarSesion(MenuHamburguesaAdmin.this);\r\n\r\n                Intent intent = new Intent(MenuHamburguesaAdmin.this, Login.class);\r\n                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n\r\n            drawerLayout.closeDrawers();\r\n            return true;\r\n        });\r\n    }\r\n\r\n    // Liberar los recursos de la WebView\r\n    @Override\r\n    protected void onDestroy() {\r\n        if (webView != null) {\r\n            webView.destroy();\r\n        }\r\n        super.onDestroy();\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/prueba/MenuHamburguesaAdmin.java b/app/src/main/java/com/example/prueba/MenuHamburguesaAdmin.java
+--- a/app/src/main/java/com/example/prueba/MenuHamburguesaAdmin.java	(revision b523953966410fa9674b0e0b207879e202d5586b)
++++ b/app/src/main/java/com/example/prueba/MenuHamburguesaAdmin.java	(date 1785921988370)
+@@ -76,9 +76,11 @@
+         navigationView.setNavigationItemSelectedListener(item -> {
+             int id = item.getItemId();
+ 
+-            if (id == R.id.nav_usuario) {
+-                contenido.setText("Usuario");
+-            } else if (id == R.id.nav_productos) {
++            if(id == R.id.nav_usuario)
++            {
++                Intent intent = new Intent(MenuHamburguesaAdmin.this, UsuariosActivity.class);
++                startActivity(intent);
++            }else if (id == R.id.nav_productos) {
+                 Intent intent = new Intent(MenuHamburguesaAdmin.this, ProductosActivity.class);
+                 startActivity(intent);
+             } else if (id == R.id.nav_inventario) {
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.Prueba\">\r\n        <activity\r\n            android:name=\".MenuHamburguesaAdmin\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.Material3.DayNight.NoActionBar\" />\r\n        <activity\r\n        android:name=\".nuevaContra\"\r\n        android:exported=\"false\" />\r\n\r\n        <activity\r\n            android:name=\".RecuperarContra\"\r\n            android:exported=\"false\" />\r\n        <!-- Productos -->\r\n        <activity\r\n            android:name=\".AgregarProductoActivity\"\r\n            android:exported=\"false\" />\r\n\r\n        <activity\r\n            android:name=\".EditarProductoActivity\"\r\n            android:exported=\"false\" />\r\n\r\n        <activity\r\n            android:name=\".ProductosActivity\"\r\n            android:exported=\"false\" />\r\n\r\n        <!-- Inventario -->\r\n        <activity\r\n            android:name=\".InventarioActivity\"\r\n            android:exported=\"false\" />\r\n\r\n        <activity\r\n            android:name=\".MovimientoActivity\"\r\n            android:exported=\"false\" />\r\n\r\n        <!-- Principal -->\r\n        <activity\r\n            android:name=\".MenuHamburguesaOperario\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.Material3.DayNight.NoActionBar\" />\r\n        <activity\r\n            android:name=\".Login\"\r\n            android:exported=\"true\">\r\n\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n\r\n        </activity>\r\n\r\n    </application>\r\n\r\n</manifest>
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision b523953966410fa9674b0e0b207879e202d5586b)
++++ b/app/src/main/AndroidManifest.xml	(date 1785921783968)
+@@ -13,17 +13,20 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/Theme.Prueba">
++
+         <activity
+             android:name=".MenuHamburguesaAdmin"
+             android:exported="false"
+             android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
++
+         <activity
+-        android:name=".nuevaContra"
+-        android:exported="false" />
++            android:name=".nuevaContra"
++            android:exported="false" />
+ 
+         <activity
+             android:name=".RecuperarContra"
+             android:exported="false" />
++
+         <!-- Productos -->
+         <activity
+             android:name=".AgregarProductoActivity"
+@@ -51,15 +54,19 @@
+             android:name=".MenuHamburguesaOperario"
+             android:exported="false"
+             android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
++
++        <!-- Módulo de Usuarios -->
++        <activity android:name=".UsuariosActivity" />
++        <activity android:name=".CrearUsuarioActivity" />
++
++        <!-- Pantalla Inicial -->
+         <activity
+             android:name=".Login"
+             android:exported="true">
+-
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+-
+         </activity>
+ 
+     </application>
+Index: app/src/main/java/com/example/prueba/Usuario.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.prueba;\r\n\r\npublic class Usuario {\r\n    private String identificacion; // uuid\r\n    private int id_rol;\r\n    private String nombre;\r\n    private String apellido;\r\n    private boolean estado;\r\n    private String fecha_registro;\r\n    private String telefono;\r\n    private String correo;\r\n\r\n    public String getIdentificacion() { return identificacion; }\r\n    public int getId_rol() { return id_rol; }\r\n    public String getNombre() { return nombre; }\r\n    public String getApellido() { return apellido; }\r\n    public boolean getEstado() { return estado; }\r\n    public String getFecha_registro() { return fecha_registro; }\r\n    public String getTelefono() { return telefono; }\r\n    public String getCorreo() { return correo; }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/prueba/Usuario.java b/app/src/main/java/com/example/prueba/Usuario.java
+--- a/app/src/main/java/com/example/prueba/Usuario.java	(revision b523953966410fa9674b0e0b207879e202d5586b)
++++ b/app/src/main/java/com/example/prueba/Usuario.java	(date 1785921472247)
+@@ -18,4 +18,13 @@
+     public String getFecha_registro() { return fecha_registro; }
+     public String getTelefono() { return telefono; }
+     public String getCorreo() { return correo; }
++
++    //setters
++    public void setIdentificacion(String identificacion) { this.identificacion = identificacion; }
++    public void setId_rol(int id_rol) { this.id_rol = id_rol; }
++    public void setNombre(String nombre) { this.nombre = nombre; }
++    public void setApellido(String apellido) { this.apellido = apellido; }
++    public void setEstado(boolean estado) { this.estado = estado; }
++    public void setTelefono(String telefono) { this.telefono = telefono; }
++    public void setCorreo(String correo) { this.correo = correo; }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/prueba/SupabaseApi.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.prueba;\r\n\r\nimport java.util.List;\r\nimport retrofit2.Call;\r\nimport retrofit2.http.Body;\r\nimport retrofit2.http.GET;\r\nimport retrofit2.http.Header;\r\nimport retrofit2.http.POST;\r\nimport retrofit2.http.PUT;\r\nimport retrofit2.http.Query;\r\n\r\npublic interface SupabaseApi {\r\n\r\n    //GET:OBTENER DATOS DESDE EL SERVIDOR\r\n    //POST:INSERTAR DATOS EN EL SERVIDOR\r\n    //PUT:ACTUALIZAR LOS DATOS EXISTENTES EN EL SERVIDOR\r\n    @GET(\"rest/v1/categorias\")\r\n    Call<List<Categoria>> getCategorias();\r\n\r\n    @GET(\"rest/v1/proveedores\")\r\n    Call<List<Proveedor>> getProveedores();\r\n\r\n    @GET(\"rest/v1/productos\")\r\n    Call<List<Producto>> getProductos();\r\n\r\n    @GET(\"rest/v1/roles\")\r\n    Call<List<Rol>> getRoles();\r\n\r\n    @GET(\"rest/v1/usuarios\")\r\n    Call<List<Usuario>> getUsuarios();\r\n\r\n    @GET(\"rest/v1/almacenes\")\r\n    Call<List<Almacen>> getAlmacenes();\r\n\r\n    @GET(\"rest/v1/inventario\")\r\n    Call<List<Inventario>> getInventario();\r\n\r\n    @GET(\"rest/v1/movimientos\")\r\n    Call<List<Movimiento>> getMovimientos();\r\n\r\n    //Endpoint para iniciar sesión en Supabase Auth\r\n    @POST(\"auth/v1/token?grant_type=password\")\r\n    Call<LoginResponse> iniciarSesion(@Body LoginRequest request);\r\n\r\n    //Endpoint(ruta) para buscar el rol del usuario en la tabla usuarios\r\n    @GET(\"rest/v1/usuarios\")\r\n    Call<List<UsuarioModelo>> obtenerUsuarioPorId(@Query(\"id\") String uuid);\r\n\r\n    // Solicita el envío del código de recuperación al correo del usuario\r\n    @POST(\"auth/v1/recover\")\r\n    Call<Void> RecuperarContra(@Body PedirCodigo request);\r\n\r\n    // Valida el código recibido en el correo y devuelve un token temporal\r\n    @POST(\"auth/v1/verify\")\r\n    Call<LoginResponse> verificarCodigo(@Body EmailRequest request);\r\n\r\n    // Actualiza la contraseña en Supabase usando el token de autorización\r\n    @PUT(\"auth/v1/user\")\r\n    Call<Void> actualizarPassword(\r\n            @Header(\"Authorization\") String bearerToken,\r\n            @Body UpdatePass request\r\n    );\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/prueba/SupabaseApi.java b/app/src/main/java/com/example/prueba/SupabaseApi.java
+--- a/app/src/main/java/com/example/prueba/SupabaseApi.java	(revision b523953966410fa9674b0e0b207879e202d5586b)
++++ b/app/src/main/java/com/example/prueba/SupabaseApi.java	(date 1785921472259)
+@@ -5,6 +5,7 @@
+ import retrofit2.http.Body;
+ import retrofit2.http.GET;
+ import retrofit2.http.Header;
++import retrofit2.http.PATCH;
+ import retrofit2.http.POST;
+ import retrofit2.http.PUT;
+ import retrofit2.http.Query;
+@@ -60,4 +61,15 @@
+             @Header("Authorization") String bearerToken,
+             @Body UpdatePass request
+     );
++
++    // Crear un nuevo usuario en la tabla
++    @POST("rest/v1/usuarios")
++    Call<Void> crearUsuarioEnTabla(@Body Usuario nuevoUsuario);
++
++    // Inhabilitar/Habilitar usuario
++    @PATCH("rest/v1/usuarios")
++    Call<Void> cambiarEstadoUsuario(
++            @Query("id") String idEquivalente, // Cambia "id" por el nombre de la columna UUID en tu base de datos
++            @Body java.util.Map<String, Boolean> estadoActualizado
++    );
+ }
+\ No newline at end of file

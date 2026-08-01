@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azul">#6DB5CA</color>
+    <color name="azulclaro">#B8D8E0</color>
+    <color name="blancohueso">#FCF5EF</color>
+    <color name="gris">#7F8C8D</color>
+    <color name="grisOscuro">#2C3E50</color>
+    <color name="naranja">#FF7235</color>
+    <string name="app_name">Prueba</string>
+    <string name="close" translatable="false">Cerrar Menu</string>
+    <string name="open" translatable="false">Abrir Menu</string>
+    <style name="Base.Theme.Prueba" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Prueba" parent="Base.Theme.Prueba"/>
+</resources>
