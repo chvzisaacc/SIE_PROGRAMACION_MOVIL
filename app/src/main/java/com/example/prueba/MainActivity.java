@@ -1,7 +1,10 @@
 package com.example.prueba;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
 import retrofit2.Call;
@@ -15,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // --- CÓDIGO BASE DEL EQUIPO (Prueba de Supabase) ---
         SupabaseApi api = RetrofitClient.getClient().create(SupabaseApi.class);
 
         api.getProveedores().enqueue(new Callback<List<Proveedor>>() {
@@ -25,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("SUPABASE_OK", "¡Conectado con éxito! Recibidos: " + response.body().size() + " productos.");
                     }
                 } else {
-                    // Si te da un código, ahora veremos el mensaje exacto
                     try {
                         Log.e("SUPABASE_ERROR", response.code() + " - " + response.errorBody().string());
                     } catch (Exception e) {
@@ -39,5 +42,29 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("SUPABASE_FAIL", "Error de red: " + t.getMessage());
             }
         });
+
+        // --- NAVEGACIÓN A TUS MÓDULOS ---
+        Button btnIrProveedores = findViewById(R.id.btnIrProveedores);
+        Button btnIrAlmacen = findViewById(R.id.btnIrAlmacen);
+
+        if (btnIrProveedores != null) {
+            btnIrProveedores.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, ProveedoresActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        if (btnIrAlmacen != null) {
+            btnIrAlmacen.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, AlmacenActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }
 }
