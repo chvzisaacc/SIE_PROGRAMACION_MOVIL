@@ -30,8 +30,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Prueba" >
-
-        <!-- Actividad Principal -->
         <activity
             android:name="com.example.prueba.MenuHamburguesaAdmin"
             android:exported="false"
@@ -42,6 +40,7 @@
         <activity
             android:name="com.example.prueba.RecuperarContra"
             android:exported="false" />
+
         <!-- Productos -->
         <activity
             android:name="com.example.prueba.AgregarProductoActivity"
@@ -61,19 +60,17 @@
             android:name="com.example.prueba.MovimientoActivity"
             android:exported="false" />
 
-        <!-- Usuarios -->
-        <activity
-            android:name="com.example.prueba.UsuariosActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.prueba.CrearUsuarioActivity"
-            android:exported="false" />
-
         <!-- Principal -->
         <activity
             android:name="com.example.prueba.MenuHamburguesaOperario"
             android:exported="false"
             android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
+
+        <!-- Módulo de Usuarios -->
+        <activity android:name="com.example.prueba.UsuariosActivity" />
+        <activity android:name="com.example.prueba.CrearUsuarioActivity" />
+
+        <!-- Pantalla Inicial -->
         <activity
             android:name="com.example.prueba.Login"
             android:exported="true" >
@@ -83,10 +80,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Tus Actividades del Módulo -->
-        <activity android:name="com.example.prueba.ProveedoresActivity" />
-        <activity android:name="com.example.prueba.AlmacenActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

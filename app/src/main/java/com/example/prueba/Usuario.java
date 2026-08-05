@@ -1,7 +1,14 @@
 package com.example.prueba;
 
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * Representa un usuario en el sistema. 
+ * El campo 'id' está mapeado para coincidir con el UUID de Supabase.
+ */
 public class Usuario {
-    private String identificacion; // uuid
+    @SerializedName("id")
+    private String id; // uuid en la base de datos
     private int id_rol;
     private String nombre;
     private String apellido;
@@ -10,7 +17,8 @@ public class Usuario {
     private String telefono;
     private String correo;
 
-    public String getIdentificacion() { return identificacion; }
+    // Getters
+    public String getId() { return id; }
     public int getId_rol() { return id_rol; }
     public String getNombre() { return nombre; }
     public String getApellido() { return apellido; }
@@ -19,8 +27,8 @@ public class Usuario {
     public String getTelefono() { return telefono; }
     public String getCorreo() { return correo; }
 
-    //setters
-    public void setIdentificacion(String identificacion) { this.identificacion = identificacion; }
+    // Setters
+    public void setId(String id) { this.id = id; }
     public void setId_rol(int id_rol) { this.id_rol = id_rol; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     public void setApellido(String apellido) { this.apellido = apellido; }
