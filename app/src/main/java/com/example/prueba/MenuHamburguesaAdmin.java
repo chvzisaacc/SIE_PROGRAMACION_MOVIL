@@ -85,7 +85,8 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
                 Intent intent = new Intent(MenuHamburguesaAdmin.this, InventarioActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_categorias) {
-                contenido.setText("Categorías");
+                Intent intent = new Intent(MenuHamburguesaAdmin.this, CategoriaActivity.class);
+                startActivity(intent);
             } else if (id == R.id.nav_almacenes) {
                 Intent intent = new Intent(MenuHamburguesaAdmin.this, AlmacenActivity.class);
                 startActivity(intent);

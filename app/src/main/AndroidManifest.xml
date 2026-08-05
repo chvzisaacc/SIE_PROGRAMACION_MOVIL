@@ -13,42 +13,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prueba">
-
+        <activity
+            android:name=".CategoriaActivity"
+            android:exported="false" />
         <!-- Actividad Principal -->
         <activity
             android:name=".MenuHamburguesaAdmin"
             android:exported="false"
             android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
         <activity
-        android:name=".nuevaContra"
-        android:exported="false" />
-
+            android:name=".nuevaContra"
+            android:exported="false" />
         <activity
             android:name=".RecuperarContra"
-            android:exported="false" />
-        <!-- Productos -->
+            android:exported="false" /> <!-- Productos -->
         <activity
             android:name=".AgregarProductoActivity"
             android:exported="false" />
-
         <activity
             android:name=".EditarProductoActivity"
             android:exported="false" />
-
         <activity
             android:name=".ProductosActivity"
-            android:exported="false" />
-
-        <!-- Inventario -->
+            android:exported="false" /> <!-- Inventario -->
         <activity
             android:name=".InventarioActivity"
             android:exported="false" />
-
         <activity
             android:name=".MovimientoActivity"
-            android:exported="false" />
-
-        <!-- Principal -->
+            android:exported="false" /> <!-- Principal -->
         <activity
             android:name=".MenuHamburguesaOperario"
             android:exported="false"
@@ -56,19 +49,14 @@
         <activity
             android:name=".Login"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-
-        <!-- Tus Actividades del Módulo -->
+        </activity> <!-- Tus Actividades del Módulo -->
         <activity android:name=".ProveedoresActivity" />
         <activity android:name=".AlmacenActivity" />
-
-
     </application>
 
 </manifest>

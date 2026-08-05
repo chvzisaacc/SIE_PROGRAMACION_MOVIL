@@ -115,4 +115,23 @@ public interface SupabaseApi {
             @Header("Authorization") String bearerToken,
             @Body UpdatePass request
     );
+
+    // Insertar categoría
+    @Headers({
+            "Content-Type: application/json",
+            "Prefer: return=minimal"
+    })
+    @POST("rest/v1/categorias")
+    Call<Void> insertarCategoria(@Body Categoria categoria);
+
+    // Actualizar categoría (Edición / Borrado Lógico)
+    @Headers({
+            "Content-Type: application/json",
+            "Prefer: return=minimal"
+    })
+    @PATCH("rest/v1/categorias")
+    Call<Void> actualizarCategoria(
+            @Query("id_categoria") String idFilter,
+            @Body Categoria categoria
+    );
 }

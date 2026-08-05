@@ -83,7 +83,8 @@ public class MenuHamburguesaOperario extends AppCompatActivity {
                 Intent intent = new Intent(MenuHamburguesaOperario.this, InventarioActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_categorias) {
-                contenido.setText("Categorías");
+                Intent intent = new Intent(MenuHamburguesaOperario.this, CategoriaActivity.class);
+                startActivity(intent);
             } else if (id == R.id.nav_reportes) {
                 contenido.setText("Reportes");
             } else if (id == R.id.nav_cerrar_sesion) {
