@@ -16,8 +16,9 @@ public class Almacen {
     @SerializedName("responsable")
     private String responsable;
 
-    // transient evita que Gson/Retrofit envíe este campo en el JSON hacia Supabase
-    private transient boolean estado = true;
+    // Se eliminó 'transient' y se agregó @SerializedName para que Retrofit envíe el booleano a Supabase
+    @SerializedName("estado")
+    private boolean estado = true;
 
     public Almacen() {
     }

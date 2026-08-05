@@ -19,8 +19,9 @@ public class Proveedor {
     @SerializedName("direccion")
     private String direccion;
 
-    // transient evita que Gson/Retrofit envíe este campo en el JSON hacia Supabase
-    private transient boolean estado = true;
+    // Se eliminó 'transient' y se agregó @SerializedName para permitir la serialización JSON
+    @SerializedName("estado")
+    private boolean estado = true;
 
     public Proveedor() {
     }

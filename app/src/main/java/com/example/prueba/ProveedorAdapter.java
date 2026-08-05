@@ -11,7 +11,9 @@ import java.util.List;
 
 public class ProveedorAdapter extends RecyclerView.Adapter<ProveedorAdapter.ViewHolder> {
 
+    // Interfaz dual: para seleccionar (editar) y para deshabilitar
     public interface OnItemClickListener {
+        void onItemClick(Proveedor proveedor);
         void onDeshabilitar(Proveedor proveedor);
     }
 
@@ -35,12 +37,30 @@ public class ProveedorAdapter extends RecyclerView.Adapter<ProveedorAdapter.View
         Proveedor p = lista.get(position);
         holder.tvTitulo.setText(p.getNombre_proveedor());
         holder.tvSubtitulo.setText("Tel: " + p.getTelefono() + " | " + p.getCorreo());
-        holder.btnDeshabilitar.setOnClickListener(v -> listener.onDeshabilitar(p));
+
+        // Clic en la fila completa para cargar los datos en los EditText (Editar)
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(p);
+            }
+        });
+
+        // Clic en el botón específico para borrar/deshabilitar
+        holder.btnDeshabilitar.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onDeshabilitar(p);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return lista != null ? lista.size() : 0;
+    }
+
+    public void setLista(List<Proveedor> nuevaLista) {
+        this.lista = nuevaLista;
+        notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

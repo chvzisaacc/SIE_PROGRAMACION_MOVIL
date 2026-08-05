@@ -12,6 +12,7 @@ import java.util.List;
 public class AlmacenAdapter extends RecyclerView.Adapter<AlmacenAdapter.ViewHolder> {
 
     public interface OnItemClickListener {
+        void onItemClick(Almacen almacen);
         void onDeshabilitar(Almacen almacen);
     }
 
@@ -34,13 +35,31 @@ public class AlmacenAdapter extends RecyclerView.Adapter<AlmacenAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Almacen a = lista.get(position);
         holder.tvTitulo.setText(a.getNombre_almacen());
-        holder.tvSubtitulo.setText("Ubicación: " + a.getUbicacion() + " | Resp: " + a.getResponsable());
-        holder.btnDeshabilitar.setOnClickListener(v -> listener.onDeshabilitar(a));
+        holder.tvSubtitulo.setText("Ubicación: " + a.getUbicacion());
+
+        // Clic en la fila completa para cargar los datos (Editar)
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(a);
+            }
+        });
+
+        // Clic en el botón para deshabilitar
+        holder.btnDeshabilitar.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onDeshabilitar(a);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return lista != null ? lista.size() : 0;
+    }
+
+    public void setLista(List<Almacen> nuevaLista) {
+        this.lista = nuevaLista;
+        notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -10,8 +10,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,16 +27,21 @@ public class ProveedoresActivity extends AppCompatActivity {
     private ProveedorAdapter adapter;
     private List<Proveedor> listaProveedores = new ArrayList<>();
 
+    // Variable clave: Guarda el ID si se está editando, o null si es registro nuevo
+    private Integer idSeleccionado = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proveedores);
 
+        // Flecha de regreso en el ActionBar
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Gestión de Proveedores");
         }
 
+        // 1. Inicializar Vistas
         etNombre = findViewById(R.id.etNombreProveedor);
         etTelefono = findViewById(R.id.etTelefonoProveedor);
         etCorreo = findViewById(R.id.etCorreoProveedor);
@@ -46,7 +53,38 @@ public class ProveedoresActivity extends AppCompatActivity {
         rvProveedores.setLayoutManager(new LinearLayoutManager(this));
         api = RetrofitClient.getClient().create(SupabaseApi.class);
 
-        btnGuardar.setOnClickListener(v -> guardarProveedor());
+        // 2. Configurar el Adapter con la interfaz doble
+        adapter = new ProveedorAdapter(listaProveedores, new ProveedorAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Proveedor proveedor) {
+                // Rellenar EditText con los datos del proveedor seleccionado
+                etNombre.setText(proveedor.getNombre_proveedor());
+                etTelefono.setText(proveedor.getTelefono());
+                etCorreo.setText(proveedor.getCorreo());
+                etDireccion.setText(proveedor.getDireccion());
+
+                // Guardar ID y cambiar estado del botón
+                idSeleccionado = proveedor.getId_proveedor();
+                btnGuardar.setText("Actualizar");
+            }
+
+            @Override
+            public void onDeshabilitar(Proveedor proveedor) {
+                deshabilitarProveedor(proveedor);
+            }
+        });
+
+        rvProveedores.setAdapter(adapter);
+
+        // 3. Evaluar comportamiento del botón principal
+        btnGuardar.setOnClickListener(v -> {
+            if (idSeleccionado == null) {
+                guardarProveedor();
+            } else {
+                actualizarProveedor(idSeleccionado);
+            }
+        });
+
         btnLimpiar.setOnClickListener(v -> limpiarCampos());
 
         cargarProveedores();
@@ -57,13 +95,12 @@ public class ProveedoresActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Proveedor>> call, Response<List<Proveedor>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    // Filtrar solo los activos (estado == true)
                     listaProveedores.clear();
+                    // Filtrar únicamente los activos (estado == true)
                     for (Proveedor p : response.body()) {
                         if (p.isEstado()) listaProveedores.add(p);
                     }
-                    adapter = new ProveedorAdapter(listaProveedores, proveedor -> deshabilitarProveedor(proveedor));
-                    rvProveedores.setAdapter(adapter);
+                    adapter.setLista(listaProveedores);
                 }
             }
 
@@ -80,7 +117,6 @@ public class ProveedoresActivity extends AppCompatActivity {
         String correo = etCorreo.getText().toString().trim();
         String direccion = etDireccion.getText().toString().trim();
 
-        // Validaciones obligatorias
         if (nombre.isEmpty() || telefono.isEmpty() || correo.isEmpty() || direccion.isEmpty()) {
             Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
             return;
@@ -91,14 +127,11 @@ public class ProveedoresActivity extends AppCompatActivity {
             return;
         }
 
-        // Creación del objeto mediante setters explícitos
         Proveedor nuevo = new Proveedor();
         nuevo.setNombre_proveedor(nombre);
         nuevo.setTelefono(telefono);
         nuevo.setCorreo(correo);
         nuevo.setDireccion(direccion);
-
-        Toast.makeText(this, "Guardando proveedor...", Toast.LENGTH_SHORT).show();
 
         api.insertarProveedor(nuevo).enqueue(new Callback<Void>() {
             @Override
@@ -108,20 +141,54 @@ public class ProveedoresActivity extends AppCompatActivity {
                     limpiarCampos();
                     cargarProveedores();
                 } else {
-                    try {
-                        String errorDetalle = response.errorBody() != null ? response.errorBody().string() : "Sin detalle";
-                        Toast.makeText(ProveedoresActivity.this, "Error " + response.code() + ": " + errorDetalle, Toast.LENGTH_LONG).show();
-                        Log.e("PROVEEDOR_ERROR_DETALLE", errorDetalle);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    mostrarError(response);
                 }
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(ProveedoresActivity.this, "Error al guardar: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e("PROVEEDOR_FAIL", t.getMessage(), t);
+            }
+        });
+    }
+
+    private void actualizarProveedor(int id) {
+        String nombre = etNombre.getText().toString().trim();
+        String telefono = etTelefono.getText().toString().trim();
+        String correo = etCorreo.getText().toString().trim();
+        String direccion = etDireccion.getText().toString().trim();
+
+        if (nombre.isEmpty() || telefono.isEmpty() || correo.isEmpty() || direccion.isEmpty()) {
+            Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(correo).matches()) {
+            etCorreo.setError("Ingrese un correo válido");
+            return;
+        }
+
+        Proveedor actualizado = new Proveedor();
+        actualizado.setNombre_proveedor(nombre);
+        actualizado.setTelefono(telefono);
+        actualizado.setCorreo(correo);
+        actualizado.setDireccion(direccion);
+
+        api.actualizarProveedor("eq." + id, actualizado).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(ProveedoresActivity.this, "¡Proveedor actualizado con éxito!", Toast.LENGTH_SHORT).show();
+                    limpiarCampos();
+                    cargarProveedores();
+                } else {
+                    mostrarError(response);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(ProveedoresActivity.this, "Error de red: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -133,6 +200,8 @@ public class ProveedoresActivity extends AppCompatActivity {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(ProveedoresActivity.this, "Proveedor deshabilitado", Toast.LENGTH_SHORT).show();
+
+                    limpiarCampos(); // Limpia formularios y resetea el botón
                     cargarProveedores();
                 }
             }
@@ -149,7 +218,20 @@ public class ProveedoresActivity extends AppCompatActivity {
         etTelefono.setText("");
         etCorreo.setText("");
         etDireccion.setText("");
+
+        idSeleccionado = null;
+        btnGuardar.setText("Guardar");
         etNombre.requestFocus();
+    }
+
+    private void mostrarError(Response<Void> response) {
+        try {
+            String errorDetalle = response.errorBody() != null ? response.errorBody().string() : "Sin detalle";
+            Toast.makeText(this, "Error " + response.code() + ": " + errorDetalle, Toast.LENGTH_LONG).show();
+            Log.e("PROVEEDOR_ERROR_DETALLE", errorDetalle);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
