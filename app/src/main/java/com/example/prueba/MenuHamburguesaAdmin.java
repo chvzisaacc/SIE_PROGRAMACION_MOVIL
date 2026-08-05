@@ -51,11 +51,13 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
             }
             else if (id == R.id.nav_productos)
             {
-                contenido.setText("Productos");
+                Intent intent = new Intent(MenuHamburguesaAdmin.this, ProductosActivity.class);
+                startActivity(intent);
             }
             else if(id == R.id.nav_inventario)
             {
-                contenido.setText("Inventario");
+                Intent intent = new Intent(MenuHamburguesaAdmin.this, InventarioActivity.class);
+                startActivity(intent);
             }
             else if(id == R.id.nav_categorias)
             {
