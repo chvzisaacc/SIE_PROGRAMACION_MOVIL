@@ -34,6 +34,8 @@ public class Login extends AppCompatActivity {
         // Si la hay, salta directo al menú correspondiente y no deja que el usuario
         // vea el formulario de login otra vez.
         if (ManejarSesion.haySesionActiva(this)) {
+            Sesion.idUsuario = ManejarSesion.getUuid(this);
+            Sesion.nombreUsuario = ManejarSesion.getNombre(this);
             int idRol = ManejarSesion.getIdRol(this);
             Intent intent;
             if (idRol == 1) {
@@ -131,8 +133,6 @@ public class Login extends AppCompatActivity {
                             usuario.getId_rol()
                     );
 
-                    Sesion.idUsuario = usuario.getId();
-                    Sesion.nombreUsuario = usuario.getNombre();
 
                     Intent intent;
                     // Valida el id_rol 1 = Admin, 2 = Operario
