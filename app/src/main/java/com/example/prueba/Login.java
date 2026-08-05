@@ -36,6 +36,7 @@ public class Login extends AppCompatActivity {
         if (ManejarSesion.haySesionActiva(this)) {
             Sesion.idUsuario = ManejarSesion.getUuid(this);
             Sesion.nombreUsuario = ManejarSesion.getNombre(this);
+
             int idRol = ManejarSesion.getIdRol(this);
             Intent intent;
             if (idRol == 1) {
@@ -45,7 +46,7 @@ public class Login extends AppCompatActivity {
             }
             startActivity(intent);
             finish();
-            return; // corta aquí, no sigue armando la pantalla de login
+            return;
         }
 
         EdgeToEdge.enable(this);
@@ -133,6 +134,8 @@ public class Login extends AppCompatActivity {
                             usuario.getId_rol()
                     );
 
+                    Sesion.idUsuario = uuid;
+                    Sesion.nombreUsuario = usuario.getNombre();
 
                     Intent intent;
                     // Valida el id_rol 1 = Admin, 2 = Operario
