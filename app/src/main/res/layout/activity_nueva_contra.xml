@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Nueva contraseña"
+            android:textColor="@color/grisOscuro"
             android:textSize="22sp"
             android:textStyle="bold" />
 
@@ -41,7 +42,7 @@
             android:layout_marginBottom="32dp"
             android:gravity="center"
             android:text="Ingresa el código que recibiste en el correo registrado y tu nueva contraseña"
-            android:textColor="#666666"
+            android:textColor="@color/grisOscuro"
             android:textSize="14sp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -55,7 +56,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Código de verificación"
                 android:inputType="number"
-                android:textColor="@color/grisOscuro" />
+                android:textColor="@color/grisOscuro"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,7 +74,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Nueva contraseña"
                 android:inputType="textPassword"
-                android:textColor="@color/grisOscuro" />
+                android:textColor="@color/grisOscuro"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

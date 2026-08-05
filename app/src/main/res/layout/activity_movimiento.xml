@@ -26,14 +26,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cantidad"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtObservaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:hint="Observaciones"
-            android:layout_marginTop="15dp"/>
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
 
         <Button
             android:id="@+id/btnGuardarMovimiento"

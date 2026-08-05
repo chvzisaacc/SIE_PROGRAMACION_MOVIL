@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre"
+            android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
         <EditText
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Descripción"
+            android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
         <EditText
@@ -42,6 +44,7 @@
             android:layout_marginTop="10dp"
             android:hint="Precio"
             android:inputType="numberDecimal"
+            android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
         <EditText
@@ -59,6 +62,7 @@
             android:layout_marginTop="10dp"
             android:hint="Stock mínimo"
             android:inputType="number"
+            android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
         <EditText
@@ -68,6 +72,7 @@
             android:layout_marginTop="10dp"
             android:hint="ID Categoría"
             android:inputType="number"
+            android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
         <EditText
@@ -77,6 +82,7 @@
             android:layout_marginTop="10dp"
             android:hint="ID Proveedor"
             android:inputType="number"
+            android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
         <Button
