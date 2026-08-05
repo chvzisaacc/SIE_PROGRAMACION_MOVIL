@@ -29,6 +29,12 @@
             android:textColor="@color/grisOscuro"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/webViewVideo"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView

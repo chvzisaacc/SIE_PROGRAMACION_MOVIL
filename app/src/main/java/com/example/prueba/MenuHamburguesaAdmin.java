@@ -1,82 +1,98 @@
 package com.example.prueba;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.material.navigation.NavigationView;
-import android.content.Intent;
 
 public class MenuHamburguesaAdmin extends AppCompatActivity {
+
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
     TextView contenido;
+    WebView webView;
+
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vista_admin);
+
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigationView);
         toolbar = findViewById(R.id.toolbar);
         contenido = findViewById(R.id.txtContenido);
+
+        // 1. Instanciamos la WebView con validación para evitar NullPointerException
+        webView = findViewById(R.id.webViewVideo);
+
+        if (webView != null) {
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setDomStorageEnabled(true);
+
+            // Permite la reproducción multimedia fluida
+            webSettings.setMediaPlaybackRequiresUserGesture(false);
+
+            webView.setWebChromeClient(new WebChromeClient());
+
+            // Cadena HTML para el reproductor
+            String htmlVideo = "<!DOCTYPE html><html><head>" +
+                    "<style>body{margin:0;padding:0;background-color:#000;}</style>" +
+                    "</head><body>" +
+                    "<iframe width=\"100%\" height=\"100%\" " +
+                    "src=\"https://www.youtube.com/embed/iM7gUJ75_8w?enablejsapi=1\" " +
+                    "title=\"YouTube video player\" frameborder=\"0\" " +
+                    "allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" " +
+                    "allowfullscreen></iframe>" +
+                    "</body></html>";
+
+            webView.loadDataWithBaseURL("https://www.youtube.com", htmlVideo, "text/html", "utf-8", null);
+        }
+
         setSupportActionBar(toolbar);
 
-        ActionBarDrawerToggle toggle =
-                new ActionBarDrawerToggle(
-                        this,drawerLayout,toolbar,R.string.open, R.string.close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        toolbar.setNavigationOnClickListener(v ->{
+        toolbar.setNavigationOnClickListener(v -> {
             drawerLayout.openDrawer(GravityCompat.START);
         });
 
-        navigationView.setNavigationItemSelectedListener(item ->{
+        navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
 
-            if(id == R.id.nav_usuario)
-            {
+            if (id == R.id.nav_usuario) {
                 contenido.setText("Usuario");
-            }
-            else if (id == R.id.nav_productos)
-            {
+            } else if (id == R.id.nav_productos) {
                 Intent intent = new Intent(MenuHamburguesaAdmin.this, ProductosActivity.class);
                 startActivity(intent);
-            }
-            else if(id == R.id.nav_inventario)
-            {
+            } else if (id == R.id.nav_inventario) {
                 Intent intent = new Intent(MenuHamburguesaAdmin.this, InventarioActivity.class);
                 startActivity(intent);
-            }
-            else if(id == R.id.nav_categorias)
-            {
+            } else if (id == R.id.nav_categorias) {
                 contenido.setText("Categorías");
-            }
-            else if(id == R.id.nav_almacenes)
-            {
+            } else if (id == R.id.nav_almacenes) {
                 contenido.setText("Almacenes");
-            }
-            else if(id == R.id.nav_reportes)
-            {
+            } else if (id == R.id.nav_reportes) {
                 contenido.setText("Reportes");
-            }
-            else if(id == R.id.nav_cerrar_sesion)
-            {
-                // Borra el token y todos los datos guardados de la sesión
+            } else if (id == R.id.nav_cerrar_sesion) {
                 ManejarSesion.cerrarSesion(MenuHamburguesaAdmin.this);
 
-                // Limpia toda las actividades y manda al Login como pantalla inicial
                 Intent intent = new Intent(MenuHamburguesaAdmin.this, Login.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
@@ -86,6 +102,14 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
             drawerLayout.closeDrawers();
             return true;
         });
+    }
 
+    // Liberar los recursos de la WebView
+    @Override
+    protected void onDestroy() {
+        if (webView != null) {
+            webView.destroy();
+        }
+        super.onDestroy();
     }
 }
