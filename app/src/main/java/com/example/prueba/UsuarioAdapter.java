@@ -48,7 +48,7 @@
             // Traducción visual del ID de rol a texto amigable
             holder.txtRol.setText(usuario.getId_rol() == 1 ? "Rol: Administrador" : "Rol: Operario");
 
-            // Configuración dinámica del botón según el estado actual (Borrado Lógico)
+            // Configuración del botón según el estado actual
             if (usuario.getEstado()) {
                 holder.btnEstado.setText("Desactivar");
                 holder.btnEstado.setBackgroundColor(holder.itemView.getContext().getResources().getColor(android.R.color.holo_red_dark));

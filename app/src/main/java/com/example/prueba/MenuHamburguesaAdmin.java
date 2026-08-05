@@ -34,8 +34,6 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         contenido = findViewById(R.id.txtContenido);
 
-
-
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -61,13 +59,16 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
                 Intent intent = new Intent(MenuHamburguesaAdmin.this, InventarioActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_categorias) {
-                Intent intent = new Intent(MenuHamburguesaAdmin.this, InventarioActivity.class);
+                Intent intent = new Intent(MenuHamburguesaAdmin.this, CategoriaActivity.class);
+                startActivity(intent);
+            } else if (id == R.id.nav_proveedores) {
+                Intent intent = new Intent(MenuHamburguesaAdmin.this, ProveedoresActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_almacenes) {
                 Intent intent = new Intent(MenuHamburguesaAdmin.this, AlmacenActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_reportes) {
-                Intent intent = new Intent(MenuHamburguesaAdmin.this, InventarioActivity.class);
+                Intent intent = new Intent(MenuHamburguesaAdmin.this, ReportesActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_cerrar_sesion) {
                 ManejarSesion.cerrarSesion(MenuHamburguesaAdmin.this);

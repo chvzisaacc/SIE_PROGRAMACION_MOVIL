@@ -30,6 +30,24 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Prueba" >
+
+        <!-- CONFIGURACIÓN DE FILEPROVIDER PARA EXPORTAR PDF -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.prueba.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.example.prueba.ReportesActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.prueba.CategoriaActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.prueba.MenuHamburguesaAdmin"
             android:exported="false"
@@ -40,8 +58,6 @@
         <activity
             android:name="com.example.prueba.RecuperarContra"
             android:exported="false" />
-
-        <!-- Productos -->
         <activity
             android:name="com.example.prueba.AgregarProductoActivity"
             android:exported="false" />
@@ -51,26 +67,24 @@
         <activity
             android:name="com.example.prueba.ProductosActivity"
             android:exported="false" />
-
-        <!-- Inventario -->
         <activity
             android:name="com.example.prueba.InventarioActivity"
             android:exported="false" />
         <activity
             android:name="com.example.prueba.MovimientoActivity"
             android:exported="false" />
-
-        <!-- Principal -->
+        <activity
+            android:name="com.example.prueba.AlmacenActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.prueba.MenuHamburguesaOperario"
             android:exported="false"
             android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
-
-        <!-- Módulo de Usuarios -->
+        <activity
+            android:name="com.example.prueba.ProveedoresActivity"
+            android:exported="false" />
         <activity android:name="com.example.prueba.UsuariosActivity" />
         <activity android:name="com.example.prueba.CrearUsuarioActivity" />
-
-        <!-- Pantalla Inicial -->
         <activity
             android:name="com.example.prueba.Login"
             android:exported="true" >

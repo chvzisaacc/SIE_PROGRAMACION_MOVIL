@@ -39,7 +39,7 @@ public class AlmacenActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Gestión de Almacenes");
         }
 
-        // 1. Inicializar Vistas
+        //Inicializar controles
         etNombre = findViewById(R.id.etNombreAlmacen);
         etUbicacion = findViewById(R.id.etUbicacionAlmacen);
         etResponsable = findViewById(R.id.etResponsableAlmacen);
@@ -50,7 +50,7 @@ public class AlmacenActivity extends AppCompatActivity {
         rvAlmacenes.setLayoutManager(new LinearLayoutManager(this));
         api = RetrofitClient.getClient().create(SupabaseApi.class);
 
-        // 2. Configurar Adapter con Listener dual
+        //Configurar Adaptador
         adapter = new AlmacenAdapter(listaAlmacenes, new AlmacenAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Almacen almacen) {

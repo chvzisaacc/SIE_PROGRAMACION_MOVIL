@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo_crema"
+    android:padding="16dp"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Módulo de Reportes"
+        android:textColor="@color/texto_oscuro"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btnRepInventario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Inventario"
+            android:textSize="11sp"
+            android:backgroundTint="@color/azul_principal"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnRepCriticos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Críticos"
+            android:textSize="11sp"
+            android:backgroundTint="@color/naranja_acento"
+            android:textColor="@color/white"
+            android:layout_marginStart="4dp" />
+
+        <Button
+            android:id="@+id/btnRepMovimientos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Movimientos"
+            android:textSize="11sp"
+            android:backgroundTint="@color/azul_principal"
+            android:textColor="@color/white"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+
+    <!-- Filtro con Selección por Calendario -->
+    <LinearLayout
+        android:id="@+id/layoutFiltroFechas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etFechaInicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:hint="Fecha Inicio"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="#000000"
+                android:textColorHint="#595959" />
+
+            <EditText
+                android:id="@+id/etFechaFin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:hint="Fecha Fin"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="#000000"
+                android:textColorHint="#595959"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnConsultarMov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Filtrar Movimientos"
+            android:backgroundTint="@color/azul_principal"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnExportarPDF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exportar PDF"
+        android:backgroundTint="@color/naranja_acento"
+        android:textColor="@color/white"
+        android:layout_marginBottom="12dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReportes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ProveedorAdapter extends RecyclerView.Adapter<ProveedorAdapter.ViewHolder> {
 
-    // Interfaz dual: para seleccionar (editar) y para deshabilitar
+    // Interfaz doble - para seleccionar (editar) y para deshabilitar
     public interface OnItemClickListener {
         void onItemClick(Proveedor proveedor);
         void onDeshabilitar(Proveedor proveedor);
@@ -38,7 +38,7 @@ public class ProveedorAdapter extends RecyclerView.Adapter<ProveedorAdapter.View
         holder.tvTitulo.setText(p.getNombre_proveedor());
         holder.tvSubtitulo.setText("Tel: " + p.getTelefono() + " | " + p.getCorreo());
 
-        // Clic en la fila completa para cargar los datos en los EditText (Editar)
+        // Clic en la fila completa para cargar los datos en los EditText
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onItemClick(p);
