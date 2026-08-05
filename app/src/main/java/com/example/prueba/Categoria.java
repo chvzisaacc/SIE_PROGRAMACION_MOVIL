@@ -9,3 +9,4 @@ public class Categoria {
     public String getNombre_categoria() { return nombre_categoria; }
     public String getDescripcion() { return descripcion; }
 }
+
