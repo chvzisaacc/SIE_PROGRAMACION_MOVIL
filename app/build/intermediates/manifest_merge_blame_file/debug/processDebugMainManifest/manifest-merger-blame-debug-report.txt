@@ -30,7 +30,7 @@
 18-->[com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\db895ed95d8b3c40172176094676d95b\transformed\core-12.1.0\AndroidManifest.xml:8:22-76
 19
 20    <application
-20-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:7:5-72:19
+20-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:7:5-82:19
 21        android:allowBackup="true"
 21-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:8:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -53,163 +53,176 @@
 31        android:testOnly="true"
 32        android:theme="@style/Theme.Prueba" >
 32-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:15:9-44
-33        <activity
-33-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:17:9-20:75
-34            android:name="com.example.prueba.MenuHamburguesaAdmin"
-34-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:18:13-49
-35            android:exported="false"
-35-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:19:13-37
-36            android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
-36-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:20:13-72
-37        <activity
-37-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:22:9-24:40
-38            android:name="com.example.prueba.nuevaContra"
-38-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:23:13-40
-39            android:exported="false" />
-39-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:24:13-37
-40        <activity
-40-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:26:9-28:40
-41            android:name="com.example.prueba.RecuperarContra"
-41-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:27:13-44
-42            android:exported="false" />
-42-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:28:13-37
-43
-44        <!-- Productos -->
-45        <activity
-45-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:31:9-33:40
-46            android:name="com.example.prueba.AgregarProductoActivity"
-46-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:32:13-52
-47            android:exported="false" />
-47-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:33:13-37
-48        <activity
-48-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:35:9-37:40
-49            android:name="com.example.prueba.EditarProductoActivity"
-49-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:36:13-51
-50            android:exported="false" />
-50-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:37:13-37
-51        <activity
-51-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:39:9-41:40
-52            android:name="com.example.prueba.ProductosActivity"
-52-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:40:13-46
-53            android:exported="false" />
-53-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:41:13-37
-54
-55        <!-- Inventario -->
-56        <activity
-56-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:44:9-46:40
-57            android:name="com.example.prueba.InventarioActivity"
-57-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:45:13-47
-58            android:exported="false" />
-58-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:46:13-37
-59        <activity
-59-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:48:9-50:40
-60            android:name="com.example.prueba.MovimientoActivity"
-60-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:49:13-47
-61            android:exported="false" />
-61-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:50:13-37
-62
-63        <!-- Principal -->
-64        <activity
-64-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:53:9-56:75
-65            android:name="com.example.prueba.MenuHamburguesaOperario"
-65-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:54:13-52
-66            android:exported="false"
-66-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:55:13-37
-67            android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
-67-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:56:13-72
-68
-69        <!-- Módulo de Usuarios -->
-70        <activity android:name="com.example.prueba.UsuariosActivity" />
-70-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:59:9-54
-70-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:59:19-51
-71        <activity android:name="com.example.prueba.CrearUsuarioActivity" />
-71-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:60:9-58
-71-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:60:19-55
-72
-73        <!-- Pantalla Inicial -->
-74        <activity
-74-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:63:9-70:20
-75            android:name="com.example.prueba.Login"
-75-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:64:13-34
-76            android:exported="true" >
-76-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:65:13-36
-77            <intent-filter>
-77-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:66:13-69:29
-78                <action android:name="android.intent.action.MAIN" />
-78-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:67:17-69
-78-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:67:25-66
-79
-80                <category android:name="android.intent.category.LAUNCHER" />
-80-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:68:17-77
-80-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:68:27-74
-81            </intent-filter>
-82        </activity>
-83
-84        <provider
-84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-85            android:name="androidx.startup.InitializationProvider"
-85-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-86            android:authorities="com.example.prueba.androidx-startup"
-86-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-87            android:exported="false" >
-87-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-88            <meta-data
-88-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-89                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-89-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-90                android:value="androidx.startup" />
-90-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-91            <meta-data
-91-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\luisf\.gradle\caches\9.4.1\transforms\8aba7f18e27996a7485eabb64d319ad9\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-92                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-92-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\luisf\.gradle\caches\9.4.1\transforms\8aba7f18e27996a7485eabb64d319ad9\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-93                android:value="androidx.startup" />
-93-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\luisf\.gradle\caches\9.4.1\transforms\8aba7f18e27996a7485eabb64d319ad9\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-94            <meta-data
-94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
-95                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-95-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
-96                android:value="androidx.startup" />
-96-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
-97        </provider>
-98
-99        <receiver
-99-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
-100            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
-101            android:directBootAware="false"
-101-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
-102            android:enabled="true"
-102-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
-103            android:exported="true"
-103-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
-104            android:permission="android.permission.DUMP" >
-104-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
-105            <intent-filter>
-105-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
-106                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
-107            </intent-filter>
-108            <intent-filter>
-108-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
-109                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
-110            </intent-filter>
-111            <intent-filter>
-111-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
-112                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
-113            </intent-filter>
-114            <intent-filter>
-114-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
-115                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-115-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-115-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
-116            </intent-filter>
-117        </receiver>
-118    </application>
-119
-120</manifest>
+33
+34        <!-- Actividad Principal -->
+35        <activity
+35-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:18:9-21:75
+36            android:name="com.example.prueba.MenuHamburguesaAdmin"
+36-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:19:13-49
+37            android:exported="false"
+37-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:20:13-37
+38            android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
+38-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:21:13-72
+39        <activity
+39-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:22:9-24:36
+40            android:name="com.example.prueba.nuevaContra"
+40-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:23:9-36
+41            android:exported="false" />
+41-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:24:9-33
+42        <activity
+42-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:26:9-28:40
+43            android:name="com.example.prueba.RecuperarContra"
+43-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:27:13-44
+44            android:exported="false" />
+44-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:28:13-37
+45        <!-- Productos -->
+46        <activity
+46-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:30:9-32:40
+47            android:name="com.example.prueba.AgregarProductoActivity"
+47-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:31:13-52
+48            android:exported="false" />
+48-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:32:13-37
+49        <activity
+49-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:34:9-36:40
+50            android:name="com.example.prueba.EditarProductoActivity"
+50-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:35:13-51
+51            android:exported="false" />
+51-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:36:13-37
+52        <activity
+52-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:38:9-40:40
+53            android:name="com.example.prueba.ProductosActivity"
+53-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:39:13-46
+54            android:exported="false" />
+54-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:40:13-37
+55
+56        <!-- Inventario -->
+57        <activity
+57-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:43:9-45:40
+58            android:name="com.example.prueba.InventarioActivity"
+58-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:44:13-47
+59            android:exported="false" />
+59-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:45:13-37
+60        <activity
+60-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:47:9-49:40
+61            android:name="com.example.prueba.MovimientoActivity"
+61-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:48:13-47
+62            android:exported="false" />
+62-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:49:13-37
+63
+64        <!-- Usuarios -->
+65        <activity
+65-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:52:9-54:40
+66            android:name="com.example.prueba.UsuariosActivity"
+66-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:53:13-45
+67            android:exported="false" />
+67-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:54:13-37
+68        <activity
+68-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:55:9-57:40
+69            android:name="com.example.prueba.CrearUsuarioActivity"
+69-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:56:13-49
+70            android:exported="false" />
+70-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:57:13-37
+71
+72        <!-- Principal -->
+73        <activity
+73-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:60:9-63:75
+74            android:name="com.example.prueba.MenuHamburguesaOperario"
+74-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:61:13-52
+75            android:exported="false"
+75-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:62:13-37
+76            android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
+76-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:63:13-72
+77        <activity
+77-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:64:9-75:20
+78            android:name="com.example.prueba.Login"
+78-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:65:13-34
+79            android:exported="true" >
+79-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:66:13-36
+80            <intent-filter>
+80-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:70:13-73:29
+81                <action android:name="android.intent.action.MAIN" />
+81-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:71:17-69
+81-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:71:25-66
+82
+83                <category android:name="android.intent.category.LAUNCHER" />
+83-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:72:17-77
+83-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:72:27-74
+84            </intent-filter>
+85        </activity>
+86
+87        <!-- Tus Actividades del Módulo -->
+88        <activity android:name="com.example.prueba.ProveedoresActivity" />
+88-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:78:9-57
+88-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:78:19-54
+89        <activity android:name="com.example.prueba.AlmacenActivity" />
+89-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:79:9-53
+89-->C:\Users\luisf\OneDrive\Desktop\Unicah\SIE_PROGRAMACION_MOVIL\app\src\main\AndroidManifest.xml:79:19-50
+90
+91        <provider
+91-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+92            android:name="androidx.startup.InitializationProvider"
+92-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+93            android:authorities="com.example.prueba.androidx-startup"
+93-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+94            android:exported="false" >
+94-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+95            <meta-data
+95-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+96                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+96-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+97                android:value="androidx.startup" />
+97-->[androidx.emoji2:emoji2:1.3.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\ec64043b99d90a14d19b42fb49c00e31\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+98            <meta-data
+98-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\luisf\.gradle\caches\9.4.1\transforms\8aba7f18e27996a7485eabb64d319ad9\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+99                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+99-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\luisf\.gradle\caches\9.4.1\transforms\8aba7f18e27996a7485eabb64d319ad9\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+100                android:value="androidx.startup" />
+100-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\luisf\.gradle\caches\9.4.1\transforms\8aba7f18e27996a7485eabb64d319ad9\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+101            <meta-data
+101-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+102                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+102-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+103                android:value="androidx.startup" />
+103-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+104        </provider>
+105
+106        <receiver
+106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+107            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+107-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+108            android:directBootAware="false"
+108-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+109            android:enabled="true"
+109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+110            android:exported="true"
+110-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+111            android:permission="android.permission.DUMP" >
+111-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+112            <intent-filter>
+112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+113                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+113-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+113-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+114            </intent-filter>
+115            <intent-filter>
+115-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+116                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+117            </intent-filter>
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+119                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+122                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\luisf\.gradle\caches\9.4.1\transforms\4d1550c599f7d62921078a45ae10afa5\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+123            </intent-filter>
+124        </receiver>
+125    </application>
+126
+127</manifest>

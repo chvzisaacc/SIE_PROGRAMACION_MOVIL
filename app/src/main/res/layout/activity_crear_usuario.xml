@@ -1,76 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar Nuevo Usuario"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/azul">
 
-    <EditText
-        android:id="@+id/etNuevoNombre"
-        android:layout_width="364dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:height="48dp"
-        android:hint="Nombre" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/naranja"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="" />
 
-    <EditText
-        android:id="@+id/etNuevoApellido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:height="48dp"
-        android:hint="Apellido" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etNuevoCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:height="49dp"
-        android:hint="Correo Electrónico"
-        android:inputType="textEmailAddress" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-    <TextView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registrar Nuevo Usuario"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grisOscuro"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/etNuevoNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Nombre"
+                    android:background="@color/blancohueso"
+                    android:padding="8dp"/>
+
+                <EditText
+                    android:id="@+id/etNuevoApellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Apellido"
+                    android:background="@color/blancohueso"
+                    android:padding="8dp"/>
+
+                <EditText
+                    android:id="@+id/etNuevoCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Correo Electrónico"
+                    android:inputType="textEmailAddress"
+                    android:background="@color/blancohueso"
+                    android:padding="8dp"/>
+
+                <EditText
+                    android:id="@+id/etNuevoTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Teléfono"
+                    android:inputType="phone"
+                    android:background="@color/blancohueso"
+                    android:padding="8dp"/>
+
+                <EditText
+                    android:id="@+id/etNuevaPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/blancohueso"
+                    android:hint="Contraseña (mín. 8 caracteres)"
+                    android:inputType="textPassword"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selecciona el Rol:"
+                    android:textColor="@color/grisOscuro"
+                    android:textStyle="bold"/>
+
+                <RadioGroup
+                    android:id="@+id/rgRoles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+                    <RadioButton
+                        android:id="@+id/rbAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Admin"
+                        android:layout_marginEnd="16dp"/>
+                    <RadioButton
+                        android:id="@+id/rbOperario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Operario"
+                        android:checked="true"/>
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/btnGuardarUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Guardar Usuario"
+                    android:backgroundTint="#4CAF50"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selecciona el Rol:"
-        android:textStyle="bold"/>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:backgroundTint="@color/azulclaro"
+        app:itemTextColor="@color/grisOscuro"
+        app:menu="@menu/menu_hamburguesa_admin" />
 
-    <RadioGroup
-        android:id="@+id/rgRoles"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="24dp">
-        <RadioButton
-            android:id="@+id/rbAdmin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Admin"
-            android:layout_marginEnd="16dp"/>
-        <RadioButton
-            android:id="@+id/rbOperario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Operario"
-            android:checked="true"/>
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/btnGuardarUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guardar Usuario"
-        android:backgroundTint="#4CAF50"
-        android:textColor="@android:color/white"/>
-
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

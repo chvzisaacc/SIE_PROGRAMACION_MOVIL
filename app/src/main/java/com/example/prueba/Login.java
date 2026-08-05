@@ -113,14 +113,14 @@ public class Login extends AppCompatActivity {
 
     //Buscar el Rol en la tabla usuarios filtrando por el UUID
     private void revisarRolyAbrirLayout(String uuid, String accessToken) {
-        apiService.obtenerUsuarioPorId("eq." + uuid).enqueue(new Callback<List<UsuarioModelo>>() {
+        apiService.obtenerUsuarioPorId("eq." + uuid).enqueue(new Callback<List<Usuario>>() {
             @Override
-            public void onResponse(Call<List<UsuarioModelo>> call, Response<List<UsuarioModelo>> response) {
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
                 if (response.isSuccessful() && response.body() != null && !response.body().isEmpty()) {
-                    UsuarioModelo usuario = response.body().get(0);
+                    Usuario usuario = response.body().get(0);
 
                     // Validamos si la cuenta está activa
-                    if (!usuario.isEstado()) {
+                    if (!usuario.getEstado()) {
                         Toast.makeText(Login.this, "Tu cuenta está desactivada.", Toast.LENGTH_LONG).show();
                         return;
                     }
@@ -155,7 +155,7 @@ public class Login extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<UsuarioModelo>> call, Throwable t) {
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
                 Toast.makeText(Login.this, "Error al consultar la base de datos", Toast.LENGTH_SHORT).show();
             }
         });

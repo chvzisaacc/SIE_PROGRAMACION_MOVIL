@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo_crema"
+    android:padding="16dp"
+    tools:ignore="HardcodedText,UseAutofill,SmallSp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Proveedores"
+        android:textColor="@color/texto_oscuro"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etNombreProveedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Nombre del Proveedor"
+        android:textColorHint="#595959"
+        android:textColor="@color/texto_oscuro"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etTelefonoProveedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Teléfono"
+        android:textColorHint="#595959"
+        android:textColor="@color/texto_oscuro"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/etCorreoProveedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Correo Electrónico"
+        android:textColorHint="#595959"
+        android:textColor="@color/texto_oscuro"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/etDireccionProveedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Dirección"
+        android:textColorHint="#595959"
+        android:textColor="@color/texto_oscuro"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/btnGuardarProveedor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_weight="1"
+            android:text="Guardar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/azul_principal" />
+
+        <Button
+            android:id="@+id/btnLimpiarProveedor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_weight="1"
+            android:text="Limpiar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/naranja_acento"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProveedores"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

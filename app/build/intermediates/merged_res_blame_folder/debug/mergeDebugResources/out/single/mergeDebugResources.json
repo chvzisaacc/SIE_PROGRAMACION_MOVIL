@@ -1,138 +1,154 @@
 [
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_nueva_contra.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_nueva_contra.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-anydpi\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_vista_operarios.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_vista_operarios.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_recuperar_contra.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_recuperar_contra.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_productos.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_productos.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-anydpi/ic_launcher.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_movimiento.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_movimiento.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_login.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_login.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/menu_menu_hamburguesa_operario.xml.flat",
-        "source": "com.example.prueba.app-main-43:/menu/menu_hamburguesa_operario.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_usuarios.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_usuarios.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-anydpi\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.prueba.app-main-43:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/xml_backup_rules.xml.flat",
-        "source": "com.example.prueba.app-main-43:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/menu_menu_hamburguesa_admin.xml.flat",
-        "source": "com.example.prueba.app-main-43:/menu/menu_hamburguesa_admin.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_item_usuario.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/item_usuario.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_item_row.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\item_row.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_item_producto.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/item_producto.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_usuarios.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_usuarios.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_inventario.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_inventario.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_agregar_producto.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_agregar_producto.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_vista_operarios.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_vista_operarios.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_item_inventario.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\item_inventario.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_editar_producto.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_editar_producto.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.prueba.app-main-43:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_nueva_contra.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_nueva_contra.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_main.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_main.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_recuperar_contra.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_recuperar_contra.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_inventario.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_inventario.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_item_inventario.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/item_inventario.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-anydpi/ic_launcher_round.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\menu_menu_hamburguesa_operario.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\menu\\menu_hamburguesa_operario.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.prueba.app-main-43:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_vista_admin.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_vista_admin.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_vista_admin.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_vista_admin.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_movimiento.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_movimiento.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_productos.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_productos.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_item_producto.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\item_producto.xml"
+    },
+    {
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_almacen.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_almacen.xml"
     },
     {
         "merged": "com.example.prueba.app-debug-41:/layout_activity_crear_usuario.xml.flat",
         "source": "com.example.prueba.app-main-43:/layout/activity_crear_usuario.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.prueba.app-main-43:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_agregar_producto.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_agregar_producto.xml"
     },
     {
-        "merged": "com.example.prueba.app-debug-41:/layout_activity_editar_producto.xml.flat",
-        "source": "com.example.prueba.app-main-43:/layout/activity_editar_producto.xml"
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_proveedores.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_proveedores.xml"
+    },
+    {
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_item_usuario.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\item_usuario.xml"
+    },
+    {
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\menu_menu_hamburguesa_admin.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\menu\\menu_hamburguesa_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-debug-41:\\layout_activity_crear_usuario.xml.flat",
+        "source": "C:\\Users\\luisf\\.gradle\\daemon\\9.4.1\\com.example.prueba.app-main-43:\\layout\\activity_crear_usuario.xml"
     }
 ]

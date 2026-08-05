@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCF5EF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar Producto"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#6DB5CA"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
+
+        <EditText
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Descripción"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
+
+        <EditText
+            android:id="@+id/txtPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Precio"
+            android:inputType="numberDecimal"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
+
+        <EditText
+            android:id="@+id/txtUnidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Unidad de medida"
+            android:textColorHint="@color/grisOscuro" />
+
+        <EditText
+            android:id="@+id/txtStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Stock mínimo"
+            android:inputType="number"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
+
+        <EditText
+            android:id="@+id/txtCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="ID Categoría"
+            android:inputType="number"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
+
+        <EditText
+            android:id="@+id/txtProveedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="ID Proveedor"
+            android:inputType="number"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Actualizar Producto"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF7235"/>
+
+    </LinearLayout>
+
+</ScrollView>

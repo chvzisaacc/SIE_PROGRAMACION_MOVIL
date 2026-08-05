@@ -10,11 +10,16 @@
 
     import java.util.List;
 
+    /**
+     * Adaptador para visualizar la lista de usuarios en un RecyclerView.
+     * Permite gestionar el estado de activación de cada usuario individualmente.
+     */
     public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder> {
 
         private List<Usuario> listaUsuarios;
         private OnEstadoChangeListener listener;
 
+        // Interfaz para notificar cambios de estado (activar/desactivar) a la Activity
         public interface OnEstadoChangeListener {
             void onEstadoChanged(Usuario usuario, boolean nuevoEstado);
         }
@@ -27,6 +32,7 @@
         @NonNull
         @Override
         public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            // Infla el diseño personalizado para cada fila de la lista
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_usuario, parent, false);
             return new UsuarioViewHolder(view);
         }
@@ -35,10 +41,14 @@
         public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
             Usuario usuario = listaUsuarios.get(position);
 
+            // Mapeo de datos del objeto Usuario a los TextViews del item
             holder.txtNombre.setText(usuario.getNombre() + " " + usuario.getApellido());
             holder.txtCorreo.setText(usuario.getCorreo());
+            
+            // Traducción visual del ID de rol a texto amigable
             holder.txtRol.setText(usuario.getId_rol() == 1 ? "Rol: Administrador" : "Rol: Operario");
 
+            // Configuración dinámica del botón según el estado actual (Borrado Lógico)
             if (usuario.getEstado()) {
                 holder.btnEstado.setText("Desactivar");
                 holder.btnEstado.setBackgroundColor(holder.itemView.getContext().getResources().getColor(android.R.color.holo_red_dark));
@@ -47,6 +57,7 @@
                 holder.btnEstado.setBackgroundColor(holder.itemView.getContext().getResources().getColor(android.R.color.holo_green_dark));
             }
 
+            // Al hacer clic, enviamos la acción inversa al estado actual mediante el listener
             holder.btnEstado.setOnClickListener(v -> listener.onEstadoChanged(usuario, !usuario.getEstado()));
         }
 
