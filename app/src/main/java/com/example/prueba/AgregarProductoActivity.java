@@ -1,12 +1,15 @@
 package com.example.prueba;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -15,42 +18,150 @@ import retrofit2.Response;
 
 public class AgregarProductoActivity extends AppCompatActivity {
 
-    // Controles del formulario
     private EditText txtNombre;
     private EditText txtDescripcion;
     private EditText txtPrecio;
     private EditText txtUnidad;
     private EditText txtStock;
-    private EditText txtCategoria;
-    private EditText txtProveedor;
+
+    private Spinner spCategoria;
+    private Spinner spProveedor;
 
     private Button btnGuardar;
 
-    // Servicios de la API
     private ProductoApi api;
     private InventarioApi inventarioApi;
+    private CategoriaApi categoriaApi;
+    private ProveedorApi proveedorApi;
+
+    private List<Categoria> listaCategorias = new ArrayList<>();
+    private List<Proveedor> listaProveedores = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_producto);
 
-        // Referencias a los controles
         txtNombre = findViewById(R.id.txtNombre);
         txtDescripcion = findViewById(R.id.txtDescripcion);
         txtPrecio = findViewById(R.id.txtPrecio);
         txtUnidad = findViewById(R.id.txtUnidad);
         txtStock = findViewById(R.id.txtStock);
-        txtCategoria = findViewById(R.id.txtCategoria);
-        txtProveedor = findViewById(R.id.txtProveedor);
+
+        spCategoria = findViewById(R.id.spCategoria);
+        spProveedor = findViewById(R.id.spProveedor);
 
         btnGuardar = findViewById(R.id.btnGuardar);
 
-        // Inicializar APIs
         api = RetrofitClient.getClient().create(ProductoApi.class);
         inventarioApi = RetrofitClient.getClient().create(InventarioApi.class);
+        categoriaApi = RetrofitClient.getClient().create(CategoriaApi.class);
+        proveedorApi = RetrofitClient.getClient().create(ProveedorApi.class);
+
+        cargarCategorias();
+        cargarProveedores();
 
         btnGuardar.setOnClickListener(v -> guardarProducto());
+    }
+
+    private void cargarCategorias() {
+
+        categoriaApi.getCategorias().enqueue(new Callback<List<Categoria>>() {
+
+            @Override
+            public void onResponse(Call<List<Categoria>> call,
+                                   Response<List<Categoria>> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+
+                    listaCategorias = response.body();
+
+                    List<String> nombres = new ArrayList<>();
+
+                    for (Categoria categoria : listaCategorias) {
+                        nombres.add(categoria.getNombre_categoria());
+                    }
+
+                    ArrayAdapter<String> adapter =
+                            new ArrayAdapter<>(
+                                    AgregarProductoActivity.this,
+                                    android.R.layout.simple_spinner_item,
+                                    nombres
+                            );
+
+                    adapter.setDropDownViewResource(
+                            android.R.layout.simple_spinner_dropdown_item
+                    );
+
+                    spCategoria.setAdapter(adapter);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Categoria>> call,
+                                  Throwable t) {
+
+                Toast.makeText(
+                        AgregarProductoActivity.this,
+                        "No se pudieron cargar las categorías",
+                        Toast.LENGTH_SHORT
+                ).show();
+
+            }
+
+        });
+
+    }
+
+    private void cargarProveedores() {
+
+        proveedorApi.getProveedores().enqueue(new Callback<List<Proveedor>>() {
+
+            @Override
+            public void onResponse(Call<List<Proveedor>> call,
+                                   Response<List<Proveedor>> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+
+                    listaProveedores = response.body();
+
+                    List<String> nombres = new ArrayList<>();
+
+                    for (Proveedor proveedor : listaProveedores) {
+                        nombres.add(proveedor.getNombre_proveedor());
+                    }
+
+                    ArrayAdapter<String> adapter =
+                            new ArrayAdapter<>(
+                                    AgregarProductoActivity.this,
+                                    android.R.layout.simple_spinner_item,
+                                    nombres
+                            );
+
+                    adapter.setDropDownViewResource(
+                            android.R.layout.simple_spinner_dropdown_item
+                    );
+
+                    spProveedor.setAdapter(adapter);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Proveedor>> call,
+                                  Throwable t) {
+
+                Toast.makeText(
+                        AgregarProductoActivity.this,
+                        "No se pudieron cargar los proveedores",
+                        Toast.LENGTH_SHORT
+                ).show();
+
+            }
+
+        });
+
     }
 
     private void guardarProducto() {
@@ -80,25 +191,21 @@ public class AgregarProductoActivity extends AppCompatActivity {
             return;
         }
 
-        if (txtCategoria.getText().toString().trim().isEmpty()) {
-            txtCategoria.setError("Ingrese el ID de la categoría");
-            return;
-        }
-
-        if (txtProveedor.getText().toString().trim().isEmpty()) {
-            txtProveedor.setError("Ingrese el ID del proveedor");
-            return;
-        }
-
         int stockInicial = Integer.parseInt(txtStock.getText().toString());
 
+        Categoria categoriaSeleccionada =
+                listaCategorias.get(spCategoria.getSelectedItemPosition());
+
+        Proveedor proveedorSeleccionado =
+                listaProveedores.get(spProveedor.getSelectedItemPosition());
+
         ProductoRequest producto = new ProductoRequest(
-                Integer.parseInt(txtCategoria.getText().toString()),
-                Integer.parseInt(txtProveedor.getText().toString()),
-                txtNombre.getText().toString(),
-                txtDescripcion.getText().toString(),
+                categoriaSeleccionada.getId_categoria(),
+                proveedorSeleccionado.getId_proveedor(),
+                txtNombre.getText().toString().trim(),
+                txtDescripcion.getText().toString().trim(),
                 Double.parseDouble(txtPrecio.getText().toString()),
-                txtUnidad.getText().toString(),
+                txtUnidad.getText().toString().trim(),
                 stockInicial
         );
 
@@ -116,7 +223,7 @@ public class AgregarProductoActivity extends AppCompatActivity {
 
                     InventarioRequest inventario = new InventarioRequest(
                             productoCreado.getId_producto(),
-                            2, // ID del almacén
+                            2,
                             stockInicial
                     );
 
@@ -139,7 +246,7 @@ public class AgregarProductoActivity extends AppCompatActivity {
 
                                         Toast.makeText(
                                                 AgregarProductoActivity.this,
-                                                "Producto guardado, pero ocurrió un error al crear el inventario",
+                                                "Producto guardado, pero no se pudo crear el inventario",
                                                 Toast.LENGTH_LONG
                                         ).show();
                                     }
@@ -153,7 +260,7 @@ public class AgregarProductoActivity extends AppCompatActivity {
 
                                     Toast.makeText(
                                             AgregarProductoActivity.this,
-                                            "Producto guardado, pero no se pudo crear el inventario",
+                                            "Producto guardado, pero ocurrió un error al crear el inventario",
                                             Toast.LENGTH_LONG
                                     ).show();
 
@@ -180,8 +287,11 @@ public class AgregarProductoActivity extends AppCompatActivity {
                                 "Código: " + response.code() + "\n" + response.message(),
                                 Toast.LENGTH_LONG
                         ).show();
+
                     }
+
                 }
+
             }
 
             @Override
@@ -193,7 +303,11 @@ public class AgregarProductoActivity extends AppCompatActivity {
                         "Error de conexión:\n" + t.getMessage(),
                         Toast.LENGTH_LONG
                 ).show();
+
             }
+
         });
+
     }
+
 }
