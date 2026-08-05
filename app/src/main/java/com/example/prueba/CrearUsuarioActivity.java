@@ -116,7 +116,7 @@ public class CrearUsuarioActivity extends AppCompatActivity {
         String telefono = etTelefono.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
-        // Paso 1: Registrar en Supabase Auth con metadatos para que el Trigger de BD los reciba
+        //Registrar en Supabase Auth con metadatos para que el Trigger de BD los reciba
         Map<String, Object> metadata = new HashMap<>();
         metadata.put("nombre", nombre);
         metadata.put("apellido", apellido);
@@ -129,8 +129,8 @@ public class CrearUsuarioActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    // Paso 2: Tras éxito en Auth, forzamos la actualización de los datos en la tabla 'usuarios'
-                    // Esto asegura que se guarden aunque el Trigger tarde o tenga valores por defecto
+                    //Tras éxito en Auth, forzamos la actualización de los datos en la tabla 'usuarios'
+                    //Esto asegura que se guarden aunque el Trigger tarde o tenga valores por defecto
                     String uidReal = response.body().getUser().getId();
                     actualizarPerfilManual(uidReal, nombre, apellido, correo, telefono);
                 } else {

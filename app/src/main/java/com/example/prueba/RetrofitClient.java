@@ -27,8 +27,7 @@ public class RetrofitClient {
                             .header("apikey", SUPABASE_ANON_KEY);
 
                     // Solo agrega Authorization con el anon key SI la petición
-                    // no trae ya su propio header Authorization (ej. el access_token
-                    // de recuperación o de sesión). Así no lo pisa.
+                    // no trae ya su propio header Authorization.
                     if (originalRequest.header("Authorization") == null) {
                         builder.header("Authorization", "Bearer " + SUPABASE_ANON_KEY);
                     }

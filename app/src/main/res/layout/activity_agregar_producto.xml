@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,8 +24,8 @@
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:hint="Nombre"
-            android:shadowColor="@color/grisOscuro"
             android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
@@ -34,9 +33,9 @@
             android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:layout_marginTop="10dp"
             android:hint="Descripción"
-            android:shadowColor="@color/grisOscuro"
             android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
@@ -44,10 +43,10 @@
             android:id="@+id/txtPrecio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:layout_marginTop="10dp"
             android:hint="Precio"
             android:inputType="numberDecimal"
-            android:shadowColor="@color/grisOscuro"
             android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
@@ -55,9 +54,9 @@
             android:id="@+id/txtUnidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:layout_marginTop="10dp"
             android:hint="Unidad de medida"
-            android:shadowColor="@color/grisOscuro"
             android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
@@ -65,40 +64,51 @@
             android:id="@+id/txtStock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:layout_marginTop="10dp"
-            android:hint="Stock mínimo"
+            android:hint="Stock inicial"
             android:inputType="number"
-            android:shadowColor="@color/grisOscuro"
             android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
-        <EditText
-            android:id="@+id/txtCategoria"
-            android:layout_width="match_parent"
+        <!-- Etiqueta y Spinner para Categorías -->
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="ID Categoría"
-            android:inputType="number"
-            android:shadowColor="@color/grisOscuro"
-            android:textColor="@color/grisOscuro"
-            android:textColorHint="@color/grisOscuro" />
+            android:text="Categoría"
+            android:textColor="#6DB5CA"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp" />
 
-        <EditText
-            android:id="@+id/txtProveedor"
+        <Spinner
+            android:id="@+id/spCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="ID Proveedor"
-            android:inputType="number"
-            android:shadowColor="@color/grisOscuro"
-            android:textColor="@color/grisOscuro"
-            android:textColorHint="@color/grisOscuro" />
+            android:minHeight="48dp"
+            android:layout_marginTop="5dp" />
+
+        <!-- Etiqueta y Spinner para Proveedores -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proveedor"
+            android:textColor="#6DB5CA"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp" />
+
+        <Spinner
+            android:id="@+id/spProveedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginTop="5dp" />
 
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:minHeight="48dp"
+            android:layout_marginTop="25dp"
             android:text="Guardar Producto"
             android:textColor="#FFFFFF"
             android:backgroundTint="#FF7235"/>

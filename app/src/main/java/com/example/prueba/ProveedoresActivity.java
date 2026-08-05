@@ -27,7 +27,7 @@ public class ProveedoresActivity extends AppCompatActivity {
     private ProveedorAdapter adapter;
     private List<Proveedor> listaProveedores = new ArrayList<>();
 
-    // Variable clave: Guarda el ID si se está editando, o null si es registro nuevo
+    // Guarda el ID si se está editando, o null si es registro nuevo
     private Integer idSeleccionado = null;
 
     @Override
@@ -41,7 +41,7 @@ public class ProveedoresActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Gestión de Proveedores");
         }
 
-        // 1. Inicializar Vistas
+        //Inicializar Controles
         etNombre = findViewById(R.id.etNombreProveedor);
         etTelefono = findViewById(R.id.etTelefonoProveedor);
         etCorreo = findViewById(R.id.etCorreoProveedor);
@@ -53,7 +53,7 @@ public class ProveedoresActivity extends AppCompatActivity {
         rvProveedores.setLayoutManager(new LinearLayoutManager(this));
         api = RetrofitClient.getClient().create(SupabaseApi.class);
 
-        // 2. Configurar el Adapter con la interfaz doble
+        //Configurar el Adapter con la interfaz doble
         adapter = new ProveedorAdapter(listaProveedores, new ProveedorAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Proveedor proveedor) {
@@ -76,7 +76,6 @@ public class ProveedoresActivity extends AppCompatActivity {
 
         rvProveedores.setAdapter(adapter);
 
-        // 3. Evaluar comportamiento del botón principal
         btnGuardar.setOnClickListener(v -> {
             if (idSeleccionado == null) {
                 guardarProveedor();
@@ -201,7 +200,7 @@ public class ProveedoresActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Toast.makeText(ProveedoresActivity.this, "Proveedor deshabilitado", Toast.LENGTH_SHORT).show();
 
-                    limpiarCampos(); // Limpia formularios y resetea el botón
+                    limpiarCampos();
                     cargarProveedores();
                 }
             }

@@ -45,38 +45,46 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="12dp"
-                    android:hint="Nombre"
                     android:background="@color/blancohueso"
-                    android:padding="8dp"/>
+                    android:hint="Nombre"
+                    android:padding="8dp"
+                    android:textColor="@color/grisOscuro"
+                    android:textColorHint="@color/grisOscuro" />
 
                 <EditText
                     android:id="@+id/etNuevoApellido"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="12dp"
-                    android:hint="Apellido"
                     android:background="@color/blancohueso"
-                    android:padding="8dp"/>
+                    android:hint="Apellido"
+                    android:padding="8dp"
+                    android:textColor="@color/grisOscuro"
+                    android:textColorHint="@color/grisOscuro" />
 
                 <EditText
                     android:id="@+id/etNuevoCorreo"
                     android:layout_width="match_parent"
                     android:layout_height="49dp"
                     android:layout_marginBottom="12dp"
+                    android:background="@color/blancohueso"
                     android:hint="Correo Electrónico"
                     android:inputType="textEmailAddress"
-                    android:background="@color/blancohueso"
-                    android:padding="8dp"/>
+                    android:padding="8dp"
+                    android:textColor="@color/grisOscuro"
+                    android:textColorHint="@color/grisOscuro" />
 
                 <EditText
                     android:id="@+id/etNuevoTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="12dp"
+                    android:background="@color/blancohueso"
                     android:hint="Teléfono"
                     android:inputType="phone"
-                    android:background="@color/blancohueso"
-                    android:padding="8dp"/>
+                    android:padding="8dp"
+                    android:textColor="@color/grisOscuro"
+                    android:textColorHint="@color/grisOscuro" />
 
                 <EditText
                     android:id="@+id/etNuevaPassword"
@@ -86,7 +94,9 @@
                     android:background="@color/blancohueso"
                     android:hint="Contraseña (mín. 8 caracteres)"
                     android:inputType="textPassword"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:textColor="@color/grisOscuro"
+                    android:textColorHint="@color/grisOscuro" />
 
                 <TextView
                     android:layout_width="wrap_content"
