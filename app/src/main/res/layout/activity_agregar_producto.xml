@@ -25,14 +25,17 @@
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"/>
+            android:hint="Nombre"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Descripción"/>
+            android:hint="Descripción"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtPrecio"
@@ -40,14 +43,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Precio"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtUnidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Unidad de medida"/>
+            android:hint="Unidad de medida"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtStock"
@@ -55,7 +62,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Stock mínimo"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:textColor="@color/grisOscuro"
+            android:textColorHint="@color/grisOscuro" />
 
         <!-- CATEGORÍA -->
         <Spinner

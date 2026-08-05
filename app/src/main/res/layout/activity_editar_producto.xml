@@ -53,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Unidad de medida"
+            android:textColor="@color/grisOscuro"
             android:textColorHint="@color/grisOscuro" />
 
         <EditText
