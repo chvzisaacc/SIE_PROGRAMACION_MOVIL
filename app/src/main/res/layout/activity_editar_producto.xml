@@ -24,14 +24,16 @@
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"/>
+            android:hint="Nombre"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Descripción"/>
+            android:hint="Descripción"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtPrecio"
@@ -39,14 +41,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Precio"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtUnidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Unidad de medida"/>
+            android:hint="Unidad de medida"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtStock"
@@ -54,7 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Stock mínimo"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtCategoria"
@@ -62,7 +67,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="ID Categoría"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:textColorHint="@color/grisOscuro" />
 
         <EditText
             android:id="@+id/txtProveedor"
@@ -70,7 +76,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="ID Proveedor"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:textColorHint="@color/grisOscuro" />
 
         <Button
             android:id="@+id/btnActualizar"
