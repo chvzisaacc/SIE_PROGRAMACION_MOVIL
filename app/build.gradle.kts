@@ -40,6 +40,8 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.material)
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)

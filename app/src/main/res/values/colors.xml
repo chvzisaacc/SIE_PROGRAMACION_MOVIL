@@ -9,4 +9,10 @@
     <color name="fondo_crema">#FCF5EF</color>
     <color name="naranja_acento">#FF7235</color>
     <color name="texto_oscuro">#2B2B2B</color>
+    <color name="azul">#6DB5CA</color>
+    <color name="blancohueso">#FCF5EF</color>
+    <color name="naranja">#FF7235</color>
+    <color name="azulclaro">#B8D8E0</color>
+    <color name="grisOscuro">#2C3E50</color>
+    <color name="gris">#7F8C8D</color>
 </resources>

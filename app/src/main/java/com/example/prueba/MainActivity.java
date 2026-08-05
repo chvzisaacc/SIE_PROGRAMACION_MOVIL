@@ -5,21 +5,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.List;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         // --- CÓDIGO BASE DEL EQUIPO (Prueba de Supabase) ---
         SupabaseApi api = RetrofitClient.getClient().create(SupabaseApi.class);
+        // Abrir directamente el módulo de Inventario
+        Intent intent = new Intent(MainActivity.this, InventarioActivity.class);
+        startActivity(intent);
 
         api.getProveedores().enqueue(new Callback<List<Proveedor>>() {
             @Override
@@ -66,5 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+        finish();
     }
 }

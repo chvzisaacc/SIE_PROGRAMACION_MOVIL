@@ -5,6 +5,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -17,24 +18,37 @@ public class RetrofitClient {
     public static Retrofit getClient() {
         if (retrofit == null) {
 
-            // Creamos un interceptor para añadir los Headers obligatorios de Supabase
-            OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                    .addInterceptor(new Interceptor() {
-                        @Override
-                        public Response intercept(Chain chain) throws IOException {
-                            Request originalRequest = chain.request();
-                            Request newRequest = originalRequest.newBuilder()
-                                    .header("apikey", SUPABASE_ANON_KEY)
-                                    .header("Authorization", "Bearer " + SUPABASE_ANON_KEY)
-                                    .build();
-                            return chain.proceed(newRequest);
-                        }
-                    }).build();
+            // Interceptor que añade apikey a todas las peticiones
+            Interceptor headerInterceptor = new Interceptor() {
+                @Override
+                public Response intercept(Chain chain) throws IOException {
+                    Request originalRequest = chain.request();
+                    Request.Builder builder = originalRequest.newBuilder()
+                            .header("apikey", SUPABASE_ANON_KEY);
 
-            // Construimos Retrofit asociándole el OkHttpClient
+                    // Solo agrega Authorization con el anon key SI la petición
+                    // no trae ya su propio header Authorization (ej. el access_token
+                    // de recuperación o de sesión). Así no lo pisa.
+                    if (originalRequest.header("Authorization") == null) {
+                        builder.header("Authorization", "Bearer " + SUPABASE_ANON_KEY);
+                    }
+
+                    return chain.proceed(builder.build());
+                }
+            };
+
+            //imprime en Logcat el request y response completos por si llegamos a tener un error
+            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+            OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                    .addInterceptor(headerInterceptor)
+                    .addInterceptor(logging)
+                    .build();
+
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
-                    .client(okHttpClient) // <-- Vinculamos las cabeceras aquí
+                    .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
