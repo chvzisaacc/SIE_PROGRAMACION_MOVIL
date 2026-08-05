@@ -25,15 +25,17 @@
             android:id="@+id/txtContenido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="."
+            android:gravity="center"
+            android:text="BIENVENIDO AL SISTEMA OPERARIO"
             android:textColor="@color/grisOscuro"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <WebView
-            android:id="@+id/webViewVideo"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="250dp" />
+            android:layout_height="605dp"
+            app:srcCompat="@drawable/gemini_generated_image_lh2308lh2308lh23" />
 
 
     </LinearLayout>

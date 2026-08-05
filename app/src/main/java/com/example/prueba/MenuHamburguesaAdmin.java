@@ -22,9 +22,8 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
     NavigationView navigationView;
     Toolbar toolbar;
     TextView contenido;
-    WebView webView;
 
-    @SuppressLint("SetJavaScriptEnabled")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,32 +34,7 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         contenido = findViewById(R.id.txtContenido);
 
-        //Instanciamos la WebView
-        webView = findViewById(R.id.webViewVideo);
 
-        if (webView != null) {
-            WebSettings webSettings = webView.getSettings();
-            webSettings.setJavaScriptEnabled(true);
-            webSettings.setDomStorageEnabled(true);
-
-            // Permite la reproducción multimedia fluida
-            webSettings.setMediaPlaybackRequiresUserGesture(false);
-
-            webView.setWebChromeClient(new WebChromeClient());
-
-            // Cadena HTML para el reproductor
-            String htmlVideo = "<!DOCTYPE html><html><head>" +
-                    "<style>body{margin:0;padding:0;background-color:#000;}</style>" +
-                    "</head><body>" +
-                    "<iframe width=\"100%\" height=\"100%\" " +
-                    "src=\"https://www.youtube.com/embed/iM7gUJ75_8w?enablejsapi=1\" " +
-                    "title=\"YouTube video player\" frameborder=\"0\" " +
-                    "allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" " +
-                    "allowfullscreen></iframe>" +
-                    "</body></html>";
-
-            webView.loadDataWithBaseURL("https://www.youtube.com", htmlVideo, "text/html", "utf-8", null);
-        }
 
         setSupportActionBar(toolbar);
 
@@ -107,14 +81,5 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
             drawerLayout.closeDrawers();
             return true;
         });
-    }
-
-    // Liberar los recursos de la WebView
-    @Override
-    protected void onDestroy() {
-        if (webView != null) {
-            webView.destroy();
-        }
-        super.onDestroy();
     }
 }
