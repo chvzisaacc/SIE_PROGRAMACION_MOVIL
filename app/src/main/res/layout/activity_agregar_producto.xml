@@ -71,14 +71,16 @@
             android:id="@+id/spCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/grisOscuro" />
 
         <!-- PROVEEDOR -->
         <Spinner
             android:id="@+id/spProveedor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/grisOscuro" />
 
         <Button
             android:id="@+id/btnGuardar"
