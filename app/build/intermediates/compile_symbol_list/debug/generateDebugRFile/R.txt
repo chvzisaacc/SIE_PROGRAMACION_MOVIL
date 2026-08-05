@@ -11,6 +11,8 @@ int color naranja 0x0
 int color naranja_acento 0x0
 int color texto_oscuro 0x0
 int color white 0x0
+int drawable _8a269537_bdd8_44a6_8e96_aa894a69b77e 0x0
+int drawable gemini_generated_image_lh2308lh2308lh23 0x0
 int drawable ic_launcher_background 0x0
 int drawable ic_launcher_foreground 0x0
 int id btnActualizar 0x0
@@ -49,6 +51,8 @@ int id etNuevoTelefono 0x0
 int id etResponsableAlmacen 0x0
 int id etTelefonoProveedor 0x0
 int id etUbicacionAlmacen 0x0
+int id imageView 0x0
+int id imageView2 0x0
 int id ingresar 0x0
 int id ivCandado 0x0
 int id linearLayout2 0x0
@@ -97,7 +101,6 @@ int id txtStock 0x0
 int id txtTipo 0x0
 int id txtTituloUsuarios 0x0
 int id txtUnidad 0x0
-int id webViewVideo 0x0
 int layout activity_agregar_producto 0x0
 int layout activity_almacen 0x0
 int layout activity_crear_usuario 0x0

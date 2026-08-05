@@ -13,6 +13,8 @@ color naranja
 color naranja_acento
 color texto_oscuro
 color white
+drawable _8a269537_bdd8_44a6_8e96_aa894a69b77e
+drawable gemini_generated_image_lh2308lh2308lh23
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id btnActualizar
@@ -51,6 +53,8 @@ id etNuevoTelefono
 id etResponsableAlmacen
 id etTelefonoProveedor
 id etUbicacionAlmacen
+id imageView
+id imageView2
 id ingresar
 id ivCandado
 id linearLayout2
@@ -99,7 +103,6 @@ id txtStock
 id txtTipo
 id txtTituloUsuarios
 id txtUnidad
-id webViewVideo
 layout activity_agregar_producto
 layout activity_almacen
 layout activity_crear_usuario
