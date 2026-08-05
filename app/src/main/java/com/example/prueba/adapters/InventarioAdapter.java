@@ -43,7 +43,20 @@ public class InventarioAdapter extends RecyclerView.Adapter<InventarioAdapter.Vi
         Inventario inventario = listaInventario.get(position);
 
         // Muestra la información en la tarjeta
-        holder.txtProducto.setText("Producto ID: " + inventario.getId_producto());
+        if (inventario.getProducto() != null) {
+
+            holder.txtProducto.setText(
+                    inventario.getProducto().getNombre_producto()
+                            + " (ID: " + inventario.getId_producto() + ")"
+            );
+
+        } else {
+
+            holder.txtProducto.setText(
+                    "Producto ID: " + inventario.getId_producto()
+            );
+
+        }
         holder.txtCantidad.setText("Cantidad: " + inventario.getCantidad_actual());
         holder.txtFecha.setText("Actualizado: " + inventario.getFecha_actualizacion());
 

@@ -26,15 +26,16 @@ public class AgregarProductoActivity extends AppCompatActivity {
 
     private Button btnGuardar;
 
-    // Servicio de la API para productos
+    // Servicios de la API
     private ProductoApi api;
+    private InventarioApi inventarioApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_producto);
 
-        // Referencias a los controles del layout
+        // Referencias a los controles
         txtNombre = findViewById(R.id.txtNombre);
         txtDescripcion = findViewById(R.id.txtDescripcion);
         txtPrecio = findViewById(R.id.txtPrecio);
@@ -45,16 +46,15 @@ public class AgregarProductoActivity extends AppCompatActivity {
 
         btnGuardar = findViewById(R.id.btnGuardar);
 
-        // Inicializa Retrofit para consumir la API
+        // Inicializar APIs
         api = RetrofitClient.getClient().create(ProductoApi.class);
+        inventarioApi = RetrofitClient.getClient().create(InventarioApi.class);
 
-        // Guarda el producto cuando se presiona el botón
         btnGuardar.setOnClickListener(v -> guardarProducto());
     }
 
     private void guardarProducto() {
 
-        // Validaciones de los campos obligatorios
         if (txtNombre.getText().toString().trim().isEmpty()) {
             txtNombre.setError("Ingrese el nombre");
             return;
@@ -90,7 +90,8 @@ public class AgregarProductoActivity extends AppCompatActivity {
             return;
         }
 
-        // Crea el objeto que será enviado a Supabase
+        int stockInicial = Integer.parseInt(txtStock.getText().toString());
+
         ProductoRequest producto = new ProductoRequest(
                 Integer.parseInt(txtCategoria.getText().toString()),
                 Integer.parseInt(txtProveedor.getText().toString()),
@@ -98,30 +99,70 @@ public class AgregarProductoActivity extends AppCompatActivity {
                 txtDescripcion.getText().toString(),
                 Double.parseDouble(txtPrecio.getText().toString()),
                 txtUnidad.getText().toString(),
-                Integer.parseInt(txtStock.getText().toString())
+                stockInicial
         );
 
-        // Envía el producto a la base de datos
         api.insertarProducto(producto).enqueue(new Callback<List<Producto>>() {
 
             @Override
             public void onResponse(Call<List<Producto>> call,
                                    Response<List<Producto>> response) {
 
-                if (response.isSuccessful()) {
+                if (response.isSuccessful()
+                        && response.body() != null
+                        && !response.body().isEmpty()) {
 
-                    Toast.makeText(
-                            AgregarProductoActivity.this,
-                            "Producto guardado correctamente",
-                            Toast.LENGTH_LONG
-                    ).show();
+                    Producto productoCreado = response.body().get(0);
 
-                    // Regresa a la pantalla anterior
-                    finish();
+                    InventarioRequest inventario = new InventarioRequest(
+                            productoCreado.getId_producto(),
+                            2, // ID del almacén
+                            stockInicial
+                    );
+
+                    inventarioApi.insertarInventario(inventario)
+                            .enqueue(new Callback<List<Inventario>>() {
+
+                                @Override
+                                public void onResponse(Call<List<Inventario>> call,
+                                                       Response<List<Inventario>> response) {
+
+                                    if (response.isSuccessful()) {
+
+                                        Toast.makeText(
+                                                AgregarProductoActivity.this,
+                                                "Producto e inventario guardados correctamente",
+                                                Toast.LENGTH_LONG
+                                        ).show();
+
+                                    } else {
+
+                                        Toast.makeText(
+                                                AgregarProductoActivity.this,
+                                                "Producto guardado, pero ocurrió un error al crear el inventario",
+                                                Toast.LENGTH_LONG
+                                        ).show();
+                                    }
+
+                                    finish();
+                                }
+
+                                @Override
+                                public void onFailure(Call<List<Inventario>> call,
+                                                      Throwable t) {
+
+                                    Toast.makeText(
+                                            AgregarProductoActivity.this,
+                                            "Producto guardado, pero no se pudo crear el inventario",
+                                            Toast.LENGTH_LONG
+                                    ).show();
+
+                                    finish();
+                                }
+                            });
 
                 } else {
 
-                    // Muestra el error devuelto por Supabase
                     try {
 
                         String error = response.errorBody().string();
@@ -139,28 +180,20 @@ public class AgregarProductoActivity extends AppCompatActivity {
                                 "Código: " + response.code() + "\n" + response.message(),
                                 Toast.LENGTH_LONG
                         ).show();
-
                     }
-
                 }
-
             }
 
             @Override
             public void onFailure(Call<List<Producto>> call,
                                   Throwable t) {
 
-                // Error de conexión con el servidor
                 Toast.makeText(
                         AgregarProductoActivity.this,
                         "Error de conexión:\n" + t.getMessage(),
                         Toast.LENGTH_LONG
                 ).show();
-
             }
-
         });
-
     }
-
 }

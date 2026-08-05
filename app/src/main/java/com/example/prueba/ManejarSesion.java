@@ -1,8 +1,10 @@
 package com.example.prueba;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 
 public class ManejarSesion {
+
     // Nombre del archivo de SharedPreferences donde se guarda todo
     private static final String PREF_NAME = "sesion_sie";
 
@@ -16,11 +18,13 @@ public class ManejarSesion {
     public static void guardarSesion(Context context, String token, String uuid, String nombre, int idRol) {
         SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
+
         editor.putString(KEY_TOKEN, token);
         editor.putString(KEY_UUID, uuid);
         editor.putString(KEY_NOMBRE, nombre);
         editor.putInt(KEY_ID_ROL, idRol);
-        editor.apply(); // apply() guarda en segundo plano, no bloquea la UI
+
+        editor.apply();
     }
 
     // Revisa si hay una sesión guardada
@@ -54,5 +58,9 @@ public class ManejarSesion {
     public static void cerrarSesion(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         prefs.edit().clear().apply();
+
+        // Limpia también la sesión en memoria
+        Sesion.idUsuario = "";
+        Sesion.nombreUsuario = "";
     }
 }

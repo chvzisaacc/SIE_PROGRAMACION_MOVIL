@@ -12,7 +12,7 @@ import retrofit2.http.Query;
 
 public interface InventarioApi {
 
-    @GET("rest/v1/inventario")
+    @GET("rest/v1/inventario?select=*,productos(id_producto,nombre_producto)")
     Call<List<Inventario>> getInventario();
 
     @Headers({
