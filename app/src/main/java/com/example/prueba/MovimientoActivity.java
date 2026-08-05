@@ -153,9 +153,6 @@ public class MovimientoActivity extends AppCompatActivity {
 
     private void registrarMovimiento(int cantidad) {
 
-        // El Login deberá asignar:
-        // Sesion.idUsuario = usuario.getId();
-        // Sesion.nombreUsuario = usuario.getNombre();
 
         if (Sesion.idUsuario.isEmpty()) {
 

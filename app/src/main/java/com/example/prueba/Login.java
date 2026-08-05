@@ -131,6 +131,9 @@ public class Login extends AppCompatActivity {
                             usuario.getId_rol()
                     );
 
+                    Sesion.idUsuario = usuario.getId();
+                    Sesion.nombreUsuario = usuario.getNombre();
+
                     Intent intent;
                     // Valida el id_rol 1 = Admin, 2 = Operario
                     if (usuario.getId_rol() == 1) {
