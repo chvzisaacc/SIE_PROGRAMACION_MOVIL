@@ -16,6 +16,9 @@
         android:id="@+id/nav_almacenes"
         android:title="Almacenes"/>
     <item
+        android:id="@+id/nav_proveedores"
+        android:title="Proveedores"/>
+    <item
         android:id="@+id/nav_reportes"
         android:title="Reportería"/>
     <item

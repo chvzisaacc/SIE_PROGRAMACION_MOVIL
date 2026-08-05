@@ -35,7 +35,7 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         contenido = findViewById(R.id.txtContenido);
 
-        // 1. Instanciamos la WebView con validación para evitar NullPointerException
+        //Instanciamos la WebView
         webView = findViewById(R.id.webViewVideo);
 
         if (webView != null) {
@@ -87,7 +87,11 @@ public class MenuHamburguesaAdmin extends AppCompatActivity {
             } else if (id == R.id.nav_categorias) {
                 contenido.setText("Categorías");
             } else if (id == R.id.nav_almacenes) {
-                contenido.setText("Almacenes");
+                Intent intent = new Intent(MenuHamburguesaAdmin.this, AlmacenActivity.class);
+                startActivity(intent);
+            } else if (id == R.id.nav_proveedores) {
+                Intent intent = new Intent(MenuHamburguesaAdmin.this, ProveedoresActivity.class);
+                startActivity(intent);
             } else if (id == R.id.nav_reportes) {
                 contenido.setText("Reportes");
             } else if (id == R.id.nav_cerrar_sesion) {
